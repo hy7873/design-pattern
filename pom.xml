@@ -8,25 +8,25 @@
 		<version>2.0.1.RELEASE</version>
 	</parent>
 
-	<groupId>com.hy.springboot-demo7</groupId>
-	<artifactId>springboot-demo7</artifactId>
+	<groupId>com.hy.design-pattern</groupId>
+	<artifactId>design-pattern</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>springboot-demo7</name>
+	<name>design-pattern</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<framework.version>2.0-SNAPSHOT</framework.version>
-		<springboot-demo7-interface-version>2.0-SNAPSHOT</springboot-demo7-interface-version>
+		<design-pattern-interface-version>2.0-SNAPSHOT</design-pattern-interface-version>
 		<JAVA_ENV>dev</JAVA_ENV>
 	</properties>
 	
 	 <modules>
-      <module>springboot-demo7-interface</module>
-      <module>springboot-demo7-web</module>
-	  <module>springboot-demo7-service</module>
+      <module>design-pattern-interface</module>
+      <module>design-pattern-web</module>
+	  <module>design-pattern-service</module>
 	 </modules>
 
 	<dependencies>
