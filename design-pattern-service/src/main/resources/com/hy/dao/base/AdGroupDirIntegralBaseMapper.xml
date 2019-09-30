@@ -1,0 +1,1449 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hy.dao.base.AdGroupDirIntegralBaseMapper">
+
+
+    <insert id="insertAdGroupDirIntegral"  useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO `ad_group_dir_integral`
+        (
+        <trim suffixOverrides=",">
+                    <if test="id!=null">
+                        `id`,
+                    </if>
+                    <if test="adGroupId!=null">
+                        `ad_group_id`,
+                    </if>
+                    <if test="groupName!=null">
+                        `group_name`,
+                    </if>
+                    <if test="integralName!=null">
+                        `integral_name`,
+                    </if>
+                    <if test="remark!=null">
+                        `remark`,
+                    </if>
+                    <if test="batchNo!=null">
+                        `batch_no`,
+                    </if>
+                    <if test="beginDate!=null">
+                        `begin_date`,
+                    </if>
+                    <if test="endDate!=null">
+                        `end_date`,
+                    </if>
+                    <if test="dirIntegral!=null">
+                        `dir_integral`,
+                    </if>
+                    <if test="availIntegral!=null">
+                        `avail_integral`,
+                    </if>
+                    <if test="rechargeType!=null">
+                        `recharge_type`,
+                    </if>
+                    <if test="type!=null">
+                        `type`,
+                    </if>
+                    <if test="status!=null">
+                        `status`,
+                    </if>
+                    <if test="createBy!=null">
+                        `create_by`,
+                    </if>
+                    <if test="createDate!=null">
+                        `create_date`,
+                    </if>
+                    <if test="updateBy!=null">
+                        `update_by`,
+                    </if>
+                    <if test="updateDate!=null">
+                        `update_date`,
+                    </if>
+                    <if test="delFlag!=null">
+                        `del_flag`,
+                    </if>
+                    <if test="takeOutPriority!=null">
+                        `take_out_priority`,
+                    </if>
+        </trim>
+        )
+        VALUES
+        (
+        <trim suffixOverrides=",">
+                <if test="id!=null">
+                    #{id},
+                </if>
+                <if test="adGroupId!=null">
+                    #{adGroupId},
+                </if>
+                <if test="groupName!=null">
+                    #{groupName},
+                </if>
+                <if test="integralName!=null">
+                    #{integralName},
+                </if>
+                <if test="remark!=null">
+                    #{remark},
+                </if>
+                <if test="batchNo!=null">
+                    #{batchNo},
+                </if>
+                <if test="beginDate!=null">
+                    #{beginDate},
+                </if>
+                <if test="endDate!=null">
+                    #{endDate},
+                </if>
+                <if test="dirIntegral!=null">
+                    #{dirIntegral},
+                </if>
+                <if test="availIntegral!=null">
+                    #{availIntegral},
+                </if>
+                <if test="rechargeType!=null">
+                    #{rechargeType},
+                </if>
+                <if test="type!=null">
+                    #{type},
+                </if>
+                <if test="status!=null">
+                    #{status},
+                </if>
+                <if test="createBy!=null">
+                    #{createBy},
+                </if>
+                <if test="createDate!=null">
+                    #{createDate},
+                </if>
+                <if test="updateBy!=null">
+                    #{updateBy},
+                </if>
+                <if test="updateDate!=null">
+                    #{updateDate},
+                </if>
+                <if test="delFlag!=null">
+                    #{delFlag},
+                </if>
+                <if test="takeOutPriority!=null">
+                    #{takeOutPriority},
+                </if>
+        </trim>
+        )
+    </insert>
+
+
+
+
+    <update id="updateAdGroupDirIntegral">
+        UPDATE `ad_group_dir_integral`
+        SET
+        <trim suffixOverrides=",">
+            <if test="adGroupId != null">
+                `ad_group_id` = #{adGroupId},
+            </if>
+            <if test="groupName != null and groupName!=''">
+                `group_name` = #{groupName},
+            </if>
+            <if test="integralName != null and integralName!=''">
+                `integral_name` = #{integralName},
+            </if>
+            <if test="remark != null and remark!=''">
+                `remark` = #{remark},
+            </if>
+            <if test="batchNo != null and batchNo!=''">
+                `batch_no` = #{batchNo},
+            </if>
+            <if test="beginDate != null">
+                `begin_date` = #{beginDate},
+            </if>
+            <if test="endDate != null">
+                `end_date` = #{endDate},
+            </if>
+            <if test="dirIntegral != null">
+                `dir_integral` = #{dirIntegral},
+            </if>
+            <if test="availIntegral != null">
+                `avail_integral` = #{availIntegral},
+            </if>
+            <if test="rechargeType != null">
+                `recharge_type` = #{rechargeType},
+            </if>
+            <if test="type != null">
+                `type` = #{type},
+            </if>
+            <if test="status != null">
+                `status` = #{status},
+            </if>
+            <if test="createBy != null and createBy!=''">
+                `create_by` = #{createBy},
+            </if>
+            <if test="createDate != null">
+                `create_date` = #{createDate},
+            </if>
+            <if test="updateBy != null and updateBy!=''">
+                `update_by` = #{updateBy},
+            </if>
+            <if test="updateDate != null">
+                `update_date` = #{updateDate},
+            </if>
+            <if test="delFlag != null and delFlag!=''">
+                `del_flag` = #{delFlag},
+            </if>
+            <if test="takeOutPriority != null">
+                `take_out_priority` = #{takeOutPriority},
+            </if>
+        </trim>
+        WHERE
+        <trim suffixOverrides="and">
+                `id` = #{id} and
+        </trim>
+    </update>
+
+    <update id="update">
+        UPDATE `ad_group_dir_integral`
+        SET
+        <trim suffixOverrides=",">
+        <if test="set.adGroupId != null">
+            `ad_group_id` = #{set.adGroupId},
+        </if>
+        <if test="set.groupName != null and set.groupName!=''">
+            `group_name` = #{set.groupName},
+        </if>
+        <if test="set.integralName != null and set.integralName!=''">
+            `integral_name` = #{set.integralName},
+        </if>
+        <if test="set.remark != null and set.remark!=''">
+            `remark` = #{set.remark},
+        </if>
+        <if test="set.batchNo != null and set.batchNo!=''">
+            `batch_no` = #{set.batchNo},
+        </if>
+        <if test="set.beginDate != null">
+            `begin_date` = #{set.beginDate},
+        </if>
+        <if test="set.endDate != null">
+            `end_date` = #{set.endDate},
+        </if>
+        <if test="set.dirIntegral != null">
+            `dir_integral` = #{set.dirIntegral},
+        </if>
+        <if test="set.availIntegral != null">
+            `avail_integral` = #{set.availIntegral},
+        </if>
+        <if test="set.rechargeType != null">
+            `recharge_type` = #{set.rechargeType},
+        </if>
+        <if test="set.type != null">
+            `type` = #{set.type},
+        </if>
+        <if test="set.status != null">
+            `status` = #{set.status},
+        </if>
+        <if test="set.createBy != null and set.createBy!=''">
+            `create_by` = #{set.createBy},
+        </if>
+        <if test="set.createDate != null">
+            `create_date` = #{set.createDate},
+        </if>
+        <if test="set.updateBy != null and set.updateBy!=''">
+            `update_by` = #{set.updateBy},
+        </if>
+        <if test="set.updateDate != null">
+            `update_date` = #{set.updateDate},
+        </if>
+        <if test="set.delFlag != null and set.delFlag!=''">
+            `del_flag` = #{set.delFlag},
+        </if>
+        <if test="set.takeOutPriority != null">
+            `take_out_priority` = #{set.takeOutPriority},
+        </if>
+        </trim>
+        <trim prefix="where" suffixOverrides="and | or">
+                <if test="where.idList != null">
+                    `id` in
+                    <foreach collection="where.idList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.idSt !=null">
+                `id` >= #{where.idSt} and
+            </if>
+            <if test="where.idEd!=null">
+                `id` &lt;= #{where.idEd} and
+            </if>
+                <if test="where.adGroupIdList != null">
+                    `ad_group_id` in
+                    <foreach collection="where.adGroupIdList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.adGroupIdSt !=null">
+                `ad_group_id` >= #{where.adGroupIdSt} and
+            </if>
+            <if test="where.adGroupIdEd!=null">
+                `ad_group_id` &lt;= #{where.adGroupIdEd} and
+            </if>
+                <if test="where.groupNameList != null">
+                    `group_name` in
+                    <foreach collection="where.groupNameList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test ="where.fuzzyGroupName!=null and where.fuzzyGroupName.size()>0">
+                (
+                <foreach collection="where.fuzzyGroupName"  separator="or" item="item">
+                    `Group_name` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test ="where.rightFuzzyGroupName!=null and where.rightFuzzyGroupName.size()>0">
+                (
+                <foreach collection="where.rightFuzzyGroupName"  separator="or" item="item">
+                    `Group_name` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+                <if test="where.integralNameList != null">
+                    `integral_name` in
+                    <foreach collection="where.integralNameList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test ="where.fuzzyIntegralName!=null and where.fuzzyIntegralName.size()>0">
+                (
+                <foreach collection="where.fuzzyIntegralName"  separator="or" item="item">
+                    `Integral_name` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test ="where.rightFuzzyIntegralName!=null and where.rightFuzzyIntegralName.size()>0">
+                (
+                <foreach collection="where.rightFuzzyIntegralName"  separator="or" item="item">
+                    `Integral_name` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+                <if test="where.remarkList != null">
+                    `remark` in
+                    <foreach collection="where.remarkList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test ="where.fuzzyRemark!=null and where.fuzzyRemark.size()>0">
+                (
+                <foreach collection="where.fuzzyRemark"  separator="or" item="item">
+                    `Remark` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test ="where.rightFuzzyRemark!=null and where.rightFuzzyRemark.size()>0">
+                (
+                <foreach collection="where.rightFuzzyRemark"  separator="or" item="item">
+                    `Remark` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+                <if test="where.batchNoList != null">
+                    `batch_no` in
+                    <foreach collection="where.batchNoList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test ="where.fuzzyBatchNo!=null and where.fuzzyBatchNo.size()>0">
+                (
+                <foreach collection="where.fuzzyBatchNo"  separator="or" item="item">
+                    `Batch_no` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test ="where.rightFuzzyBatchNo!=null and where.rightFuzzyBatchNo.size()>0">
+                (
+                <foreach collection="where.rightFuzzyBatchNo"  separator="or" item="item">
+                    `Batch_no` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+                <if test="where.beginDateList != null">
+                    `begin_date` in
+                    <foreach collection="where.beginDateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.beginDateSt !=null">
+                `begin_date` >= #{where.beginDateSt} and
+            </if>
+            <if test="where.beginDateEd!=null">
+                `begin_date` &lt;= #{where.beginDateEd} and
+            </if>
+                <if test="where.endDateList != null">
+                    `end_date` in
+                    <foreach collection="where.endDateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.endDateSt !=null">
+                `end_date` >= #{where.endDateSt} and
+            </if>
+            <if test="where.endDateEd!=null">
+                `end_date` &lt;= #{where.endDateEd} and
+            </if>
+                <if test="where.dirIntegralList != null">
+                    `dir_integral` in
+                    <foreach collection="where.dirIntegralList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.dirIntegralSt !=null">
+                `dir_integral` >= #{where.dirIntegralSt} and
+            </if>
+            <if test="where.dirIntegralEd!=null">
+                `dir_integral` &lt;= #{where.dirIntegralEd} and
+            </if>
+                <if test="where.availIntegralList != null">
+                    `avail_integral` in
+                    <foreach collection="where.availIntegralList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.availIntegralSt !=null">
+                `avail_integral` >= #{where.availIntegralSt} and
+            </if>
+            <if test="where.availIntegralEd!=null">
+                `avail_integral` &lt;= #{where.availIntegralEd} and
+            </if>
+                <if test="where.rechargeTypeList != null">
+                    `recharge_type` in
+                    <foreach collection="where.rechargeTypeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.rechargeTypeSt !=null">
+                `recharge_type` >= #{where.rechargeTypeSt} and
+            </if>
+            <if test="where.rechargeTypeEd!=null">
+                `recharge_type` &lt;= #{where.rechargeTypeEd} and
+            </if>
+                <if test="where.typeList != null">
+                    `type` in
+                    <foreach collection="where.typeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.typeSt !=null">
+                `type` >= #{where.typeSt} and
+            </if>
+            <if test="where.typeEd!=null">
+                `type` &lt;= #{where.typeEd} and
+            </if>
+                <if test="where.statusList != null">
+                    `status` in
+                    <foreach collection="where.statusList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.statusSt !=null">
+                `status` >= #{where.statusSt} and
+            </if>
+            <if test="where.statusEd!=null">
+                `status` &lt;= #{where.statusEd} and
+            </if>
+                <if test="where.createByList != null">
+                    `create_by` in
+                    <foreach collection="where.createByList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test ="where.fuzzyCreateBy!=null and where.fuzzyCreateBy.size()>0">
+                (
+                <foreach collection="where.fuzzyCreateBy"  separator="or" item="item">
+                    `Create_by` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test ="where.rightFuzzyCreateBy!=null and where.rightFuzzyCreateBy.size()>0">
+                (
+                <foreach collection="where.rightFuzzyCreateBy"  separator="or" item="item">
+                    `Create_by` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+                <if test="where.createDateList != null">
+                    `create_date` in
+                    <foreach collection="where.createDateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.createDateSt !=null">
+                `create_date` >= #{where.createDateSt} and
+            </if>
+            <if test="where.createDateEd!=null">
+                `create_date` &lt;= #{where.createDateEd} and
+            </if>
+                <if test="where.updateByList != null">
+                    `update_by` in
+                    <foreach collection="where.updateByList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test ="where.fuzzyUpdateBy!=null and where.fuzzyUpdateBy.size()>0">
+                (
+                <foreach collection="where.fuzzyUpdateBy"  separator="or" item="item">
+                    `Update_by` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test ="where.rightFuzzyUpdateBy!=null and where.rightFuzzyUpdateBy.size()>0">
+                (
+                <foreach collection="where.rightFuzzyUpdateBy"  separator="or" item="item">
+                    `Update_by` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+                <if test="where.updateDateList != null">
+                    `update_date` in
+                    <foreach collection="where.updateDateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.updateDateSt !=null">
+                `update_date` >= #{where.updateDateSt} and
+            </if>
+            <if test="where.updateDateEd!=null">
+                `update_date` &lt;= #{where.updateDateEd} and
+            </if>
+                <if test="where.delFlagList != null">
+                    `del_flag` in
+                    <foreach collection="where.delFlagList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test ="where.fuzzyDelFlag!=null and where.fuzzyDelFlag.size()>0">
+                (
+                <foreach collection="where.fuzzyDelFlag"  separator="or" item="item">
+                    `Del_flag` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test ="where.rightFuzzyDelFlag!=null and where.rightFuzzyDelFlag.size()>0">
+                (
+                <foreach collection="where.rightFuzzyDelFlag"  separator="or" item="item">
+                    `Del_flag` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+                <if test="where.takeOutPriorityList != null">
+                    `take_out_priority` in
+                    <foreach collection="where.takeOutPriorityList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.takeOutPrioritySt !=null">
+                `take_out_priority` >= #{where.takeOutPrioritySt} and
+            </if>
+            <if test="where.takeOutPriorityEd!=null">
+                `take_out_priority` &lt;= #{where.takeOutPriorityEd} and
+            </if>
+        </trim>
+    </update>
+
+
+    <resultMap type="com.hy.model.AdGroupDirIntegral" id="AdGroupDirIntegralMap">
+        <result property="id" column="id"/>
+        <result property="adGroupId" column="ad_group_id"/>
+        <result property="groupName" column="group_name"/>
+        <result property="integralName" column="integral_name"/>
+        <result property="remark" column="remark"/>
+        <result property="batchNo" column="batch_no"/>
+        <result property="beginDate" column="begin_date"/>
+        <result property="endDate" column="end_date"/>
+        <result property="dirIntegral" column="dir_integral"/>
+        <result property="availIntegral" column="avail_integral"/>
+        <result property="rechargeType" column="recharge_type"/>
+        <result property="type" column="type"/>
+        <result property="status" column="status"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createDate" column="create_date"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateDate" column="update_date"/>
+        <result property="delFlag" column="del_flag"/>
+        <result property="takeOutPriority" column="take_out_priority"/>
+    </resultMap>
+
+
+    <select id="queryAdGroupDirIntegral" resultMap="AdGroupDirIntegralMap">
+        select
+        <include refid="baseResult"></include>
+        from  `ad_group_dir_integral`
+        <trim prefix="where" suffixOverrides="and | or">
+            <if test="id != null">
+                `id` = #{id} and
+            </if>
+            <if test="adGroupId != null">
+                `ad_group_id` = #{adGroupId} and
+            </if>
+            <if test="groupName != null and groupName!=''">
+                `group_name` = #{groupName} and
+            </if>
+            <if test="integralName != null and integralName!=''">
+                `integral_name` = #{integralName} and
+            </if>
+            <if test="remark != null and remark!=''">
+                `remark` = #{remark} and
+            </if>
+            <if test="batchNo != null and batchNo!=''">
+                `batch_no` = #{batchNo} and
+            </if>
+            <if test="beginDate != null">
+                `begin_date` = #{beginDate} and
+            </if>
+            <if test="endDate != null">
+                `end_date` = #{endDate} and
+            </if>
+            <if test="dirIntegral != null">
+                `dir_integral` = #{dirIntegral} and
+            </if>
+            <if test="availIntegral != null">
+                `avail_integral` = #{availIntegral} and
+            </if>
+            <if test="rechargeType != null">
+                `recharge_type` = #{rechargeType} and
+            </if>
+            <if test="type != null">
+                `type` = #{type} and
+            </if>
+            <if test="status != null">
+                `status` = #{status} and
+            </if>
+            <if test="createBy != null and createBy!=''">
+                `create_by` = #{createBy} and
+            </if>
+            <if test="createDate != null">
+                `create_date` = #{createDate} and
+            </if>
+            <if test="updateBy != null and updateBy!=''">
+                `update_by` = #{updateBy} and
+            </if>
+            <if test="updateDate != null">
+                `update_date` = #{updateDate} and
+            </if>
+            <if test="delFlag != null and delFlag!=''">
+                `del_flag` = #{delFlag} and
+            </if>
+            <if test="takeOutPriority != null">
+                `take_out_priority` = #{takeOutPriority} and
+            </if>
+            <if test = "(_parameter instanceof com.hy.model.AdGroupDirIntegral$QueryBuilder) == true">
+                <if test="idList != null">
+                    `id` in
+                    <foreach collection="idList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="idSt !=null">
+                    `id` >= #{idSt} and
+                </if>
+                <if test="idEd!=null">
+                    `id` &lt;= #{idEd} and
+                </if>
+                <if test="adGroupIdList != null">
+                    `ad_group_id` in
+                    <foreach collection="adGroupIdList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="adGroupIdSt !=null">
+                    `ad_group_id` >= #{adGroupIdSt} and
+                </if>
+                <if test="adGroupIdEd!=null">
+                    `ad_group_id` &lt;= #{adGroupIdEd} and
+                </if>
+                <if test="groupNameList != null">
+                    `group_name` in
+                    <foreach collection="groupNameList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test ="fuzzyGroupName!=null and fuzzyGroupName.size()>0">
+                    (
+                    <foreach collection="fuzzyGroupName"  separator="or" item="item">
+                        `Group_name` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyGroupName!=null and rightFuzzyGroupName.size()>0">
+                    (
+                    <foreach collection="rightFuzzyGroupName"  separator="or" item="item">
+                        `Group_name` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="integralNameList != null">
+                    `integral_name` in
+                    <foreach collection="integralNameList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test ="fuzzyIntegralName!=null and fuzzyIntegralName.size()>0">
+                    (
+                    <foreach collection="fuzzyIntegralName"  separator="or" item="item">
+                        `Integral_name` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyIntegralName!=null and rightFuzzyIntegralName.size()>0">
+                    (
+                    <foreach collection="rightFuzzyIntegralName"  separator="or" item="item">
+                        `Integral_name` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="remarkList != null">
+                    `remark` in
+                    <foreach collection="remarkList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test ="fuzzyRemark!=null and fuzzyRemark.size()>0">
+                    (
+                    <foreach collection="fuzzyRemark"  separator="or" item="item">
+                        `Remark` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyRemark!=null and rightFuzzyRemark.size()>0">
+                    (
+                    <foreach collection="rightFuzzyRemark"  separator="or" item="item">
+                        `Remark` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="batchNoList != null">
+                    `batch_no` in
+                    <foreach collection="batchNoList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test ="fuzzyBatchNo!=null and fuzzyBatchNo.size()>0">
+                    (
+                    <foreach collection="fuzzyBatchNo"  separator="or" item="item">
+                        `Batch_no` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyBatchNo!=null and rightFuzzyBatchNo.size()>0">
+                    (
+                    <foreach collection="rightFuzzyBatchNo"  separator="or" item="item">
+                        `Batch_no` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="beginDateList != null">
+                    `begin_date` in
+                    <foreach collection="beginDateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="beginDateSt !=null">
+                    `begin_date` >= #{beginDateSt} and
+                </if>
+                <if test="beginDateEd!=null">
+                    `begin_date` &lt;= #{beginDateEd} and
+                </if>
+                <if test="endDateList != null">
+                    `end_date` in
+                    <foreach collection="endDateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="endDateSt !=null">
+                    `end_date` >= #{endDateSt} and
+                </if>
+                <if test="endDateEd!=null">
+                    `end_date` &lt;= #{endDateEd} and
+                </if>
+                <if test="dirIntegralList != null">
+                    `dir_integral` in
+                    <foreach collection="dirIntegralList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="dirIntegralSt !=null">
+                    `dir_integral` >= #{dirIntegralSt} and
+                </if>
+                <if test="dirIntegralEd!=null">
+                    `dir_integral` &lt;= #{dirIntegralEd} and
+                </if>
+                <if test="availIntegralList != null">
+                    `avail_integral` in
+                    <foreach collection="availIntegralList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="availIntegralSt !=null">
+                    `avail_integral` >= #{availIntegralSt} and
+                </if>
+                <if test="availIntegralEd!=null">
+                    `avail_integral` &lt;= #{availIntegralEd} and
+                </if>
+                <if test="rechargeTypeList != null">
+                    `recharge_type` in
+                    <foreach collection="rechargeTypeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="rechargeTypeSt !=null">
+                    `recharge_type` >= #{rechargeTypeSt} and
+                </if>
+                <if test="rechargeTypeEd!=null">
+                    `recharge_type` &lt;= #{rechargeTypeEd} and
+                </if>
+                <if test="typeList != null">
+                    `type` in
+                    <foreach collection="typeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="typeSt !=null">
+                    `type` >= #{typeSt} and
+                </if>
+                <if test="typeEd!=null">
+                    `type` &lt;= #{typeEd} and
+                </if>
+                <if test="statusList != null">
+                    `status` in
+                    <foreach collection="statusList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="statusSt !=null">
+                    `status` >= #{statusSt} and
+                </if>
+                <if test="statusEd!=null">
+                    `status` &lt;= #{statusEd} and
+                </if>
+                <if test="createByList != null">
+                    `create_by` in
+                    <foreach collection="createByList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test ="fuzzyCreateBy!=null and fuzzyCreateBy.size()>0">
+                    (
+                    <foreach collection="fuzzyCreateBy"  separator="or" item="item">
+                        `Create_by` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyCreateBy!=null and rightFuzzyCreateBy.size()>0">
+                    (
+                    <foreach collection="rightFuzzyCreateBy"  separator="or" item="item">
+                        `Create_by` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="createDateList != null">
+                    `create_date` in
+                    <foreach collection="createDateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="createDateSt !=null">
+                    `create_date` >= #{createDateSt} and
+                </if>
+                <if test="createDateEd!=null">
+                    `create_date` &lt;= #{createDateEd} and
+                </if>
+                <if test="updateByList != null">
+                    `update_by` in
+                    <foreach collection="updateByList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test ="fuzzyUpdateBy!=null and fuzzyUpdateBy.size()>0">
+                    (
+                    <foreach collection="fuzzyUpdateBy"  separator="or" item="item">
+                        `Update_by` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyUpdateBy!=null and rightFuzzyUpdateBy.size()>0">
+                    (
+                    <foreach collection="rightFuzzyUpdateBy"  separator="or" item="item">
+                        `Update_by` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="updateDateList != null">
+                    `update_date` in
+                    <foreach collection="updateDateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="updateDateSt !=null">
+                    `update_date` >= #{updateDateSt} and
+                </if>
+                <if test="updateDateEd!=null">
+                    `update_date` &lt;= #{updateDateEd} and
+                </if>
+                <if test="delFlagList != null">
+                    `del_flag` in
+                    <foreach collection="delFlagList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test ="fuzzyDelFlag!=null and fuzzyDelFlag.size()>0">
+                    (
+                    <foreach collection="fuzzyDelFlag"  separator="or" item="item">
+                        `Del_flag` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyDelFlag!=null and rightFuzzyDelFlag.size()>0">
+                    (
+                    <foreach collection="rightFuzzyDelFlag"  separator="or" item="item">
+                        `Del_flag` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="takeOutPriorityList != null">
+                    `take_out_priority` in
+                    <foreach collection="takeOutPriorityList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="takeOutPrioritySt !=null">
+                    `take_out_priority` >= #{takeOutPrioritySt} and
+                </if>
+                <if test="takeOutPriorityEd!=null">
+                    `take_out_priority` &lt;= #{takeOutPriorityEd} and
+                </if>
+            </if>
+        </trim>
+    </select>
+
+    <select id="queryAdGroupDirIntegralLimit1" resultMap="AdGroupDirIntegralMap">
+        select
+        <include refid="baseResult"></include>
+        from  `ad_group_dir_integral`
+        <trim prefix="where" suffixOverrides="and | or">
+            <if test="id != null">
+                `id` = #{id} and
+            </if>
+            <if test="adGroupId != null">
+                `ad_group_id` = #{adGroupId} and
+            </if>
+            <if test="groupName != null and groupName!=''">
+                `group_name` = #{groupName} and
+            </if>
+            <if test="integralName != null and integralName!=''">
+                `integral_name` = #{integralName} and
+            </if>
+            <if test="remark != null and remark!=''">
+                `remark` = #{remark} and
+            </if>
+            <if test="batchNo != null and batchNo!=''">
+                `batch_no` = #{batchNo} and
+            </if>
+            <if test="beginDate != null">
+                `begin_date` = #{beginDate} and
+            </if>
+            <if test="endDate != null">
+                `end_date` = #{endDate} and
+            </if>
+            <if test="dirIntegral != null">
+                `dir_integral` = #{dirIntegral} and
+            </if>
+            <if test="availIntegral != null">
+                `avail_integral` = #{availIntegral} and
+            </if>
+            <if test="rechargeType != null">
+                `recharge_type` = #{rechargeType} and
+            </if>
+            <if test="type != null">
+                `type` = #{type} and
+            </if>
+            <if test="status != null">
+                `status` = #{status} and
+            </if>
+            <if test="createBy != null and createBy!=''">
+                `create_by` = #{createBy} and
+            </if>
+            <if test="createDate != null">
+                `create_date` = #{createDate} and
+            </if>
+            <if test="updateBy != null and updateBy!=''">
+                `update_by` = #{updateBy} and
+            </if>
+            <if test="updateDate != null">
+                `update_date` = #{updateDate} and
+            </if>
+            <if test="delFlag != null and delFlag!=''">
+                `del_flag` = #{delFlag} and
+            </if>
+            <if test="takeOutPriority != null">
+                `take_out_priority` = #{takeOutPriority} and
+            </if>
+            <if test = "(_parameter instanceof com.hy.model.AdGroupDirIntegral$QueryBuilder) == true">
+                    <if test="idList != null">
+                        `id` in
+                        <foreach collection="idList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="idSt !=null">
+                    `id` >= #{idSt} and
+                </if>
+                <if test="idEd!=null">
+                    `id` &lt;= #{idEd} and
+                </if>
+                    <if test="adGroupIdList != null">
+                        `ad_group_id` in
+                        <foreach collection="adGroupIdList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="adGroupIdSt !=null">
+                    `ad_group_id` >= #{adGroupIdSt} and
+                </if>
+                <if test="adGroupIdEd!=null">
+                    `ad_group_id` &lt;= #{adGroupIdEd} and
+                </if>
+                    <if test="groupNameList != null">
+                        `group_name` in
+                        <foreach collection="groupNameList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test ="fuzzyGroupName!=null and fuzzyGroupName.size()>0">
+                    (
+                    <foreach collection="fuzzyGroupName"  separator="or" item="item">
+                        `Group_name` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyGroupName!=null and rightFuzzyGroupName.size()>0">
+                    (
+                    <foreach collection="rightFuzzyGroupName"  separator="or" item="item">
+                        `Group_name` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                    <if test="integralNameList != null">
+                        `integral_name` in
+                        <foreach collection="integralNameList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test ="fuzzyIntegralName!=null and fuzzyIntegralName.size()>0">
+                    (
+                    <foreach collection="fuzzyIntegralName"  separator="or" item="item">
+                        `Integral_name` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyIntegralName!=null and rightFuzzyIntegralName.size()>0">
+                    (
+                    <foreach collection="rightFuzzyIntegralName"  separator="or" item="item">
+                        `Integral_name` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                    <if test="remarkList != null">
+                        `remark` in
+                        <foreach collection="remarkList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test ="fuzzyRemark!=null and fuzzyRemark.size()>0">
+                    (
+                    <foreach collection="fuzzyRemark"  separator="or" item="item">
+                        `Remark` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyRemark!=null and rightFuzzyRemark.size()>0">
+                    (
+                    <foreach collection="rightFuzzyRemark"  separator="or" item="item">
+                        `Remark` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                    <if test="batchNoList != null">
+                        `batch_no` in
+                        <foreach collection="batchNoList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test ="fuzzyBatchNo!=null and fuzzyBatchNo.size()>0">
+                    (
+                    <foreach collection="fuzzyBatchNo"  separator="or" item="item">
+                        `Batch_no` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyBatchNo!=null and rightFuzzyBatchNo.size()>0">
+                    (
+                    <foreach collection="rightFuzzyBatchNo"  separator="or" item="item">
+                        `Batch_no` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                    <if test="beginDateList != null">
+                        `begin_date` in
+                        <foreach collection="beginDateList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="beginDateSt !=null">
+                    `begin_date` >= #{beginDateSt} and
+                </if>
+                <if test="beginDateEd!=null">
+                    `begin_date` &lt;= #{beginDateEd} and
+                </if>
+                    <if test="endDateList != null">
+                        `end_date` in
+                        <foreach collection="endDateList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="endDateSt !=null">
+                    `end_date` >= #{endDateSt} and
+                </if>
+                <if test="endDateEd!=null">
+                    `end_date` &lt;= #{endDateEd} and
+                </if>
+                    <if test="dirIntegralList != null">
+                        `dir_integral` in
+                        <foreach collection="dirIntegralList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="dirIntegralSt !=null">
+                    `dir_integral` >= #{dirIntegralSt} and
+                </if>
+                <if test="dirIntegralEd!=null">
+                    `dir_integral` &lt;= #{dirIntegralEd} and
+                </if>
+                    <if test="availIntegralList != null">
+                        `avail_integral` in
+                        <foreach collection="availIntegralList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="availIntegralSt !=null">
+                    `avail_integral` >= #{availIntegralSt} and
+                </if>
+                <if test="availIntegralEd!=null">
+                    `avail_integral` &lt;= #{availIntegralEd} and
+                </if>
+                    <if test="rechargeTypeList != null">
+                        `recharge_type` in
+                        <foreach collection="rechargeTypeList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="rechargeTypeSt !=null">
+                    `recharge_type` >= #{rechargeTypeSt} and
+                </if>
+                <if test="rechargeTypeEd!=null">
+                    `recharge_type` &lt;= #{rechargeTypeEd} and
+                </if>
+                    <if test="typeList != null">
+                        `type` in
+                        <foreach collection="typeList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="typeSt !=null">
+                    `type` >= #{typeSt} and
+                </if>
+                <if test="typeEd!=null">
+                    `type` &lt;= #{typeEd} and
+                </if>
+                    <if test="statusList != null">
+                        `status` in
+                        <foreach collection="statusList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="statusSt !=null">
+                    `status` >= #{statusSt} and
+                </if>
+                <if test="statusEd!=null">
+                    `status` &lt;= #{statusEd} and
+                </if>
+                    <if test="createByList != null">
+                        `create_by` in
+                        <foreach collection="createByList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test ="fuzzyCreateBy!=null and fuzzyCreateBy.size()>0">
+                    (
+                    <foreach collection="fuzzyCreateBy"  separator="or" item="item">
+                        `Create_by` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyCreateBy!=null and rightFuzzyCreateBy.size()>0">
+                    (
+                    <foreach collection="rightFuzzyCreateBy"  separator="or" item="item">
+                        `Create_by` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                    <if test="createDateList != null">
+                        `create_date` in
+                        <foreach collection="createDateList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="createDateSt !=null">
+                    `create_date` >= #{createDateSt} and
+                </if>
+                <if test="createDateEd!=null">
+                    `create_date` &lt;= #{createDateEd} and
+                </if>
+                    <if test="updateByList != null">
+                        `update_by` in
+                        <foreach collection="updateByList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test ="fuzzyUpdateBy!=null and fuzzyUpdateBy.size()>0">
+                    (
+                    <foreach collection="fuzzyUpdateBy"  separator="or" item="item">
+                        `Update_by` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyUpdateBy!=null and rightFuzzyUpdateBy.size()>0">
+                    (
+                    <foreach collection="rightFuzzyUpdateBy"  separator="or" item="item">
+                        `Update_by` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                    <if test="updateDateList != null">
+                        `update_date` in
+                        <foreach collection="updateDateList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="updateDateSt !=null">
+                    `update_date` >= #{updateDateSt} and
+                </if>
+                <if test="updateDateEd!=null">
+                    `update_date` &lt;= #{updateDateEd} and
+                </if>
+                    <if test="delFlagList != null">
+                        `del_flag` in
+                        <foreach collection="delFlagList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test ="fuzzyDelFlag!=null and fuzzyDelFlag.size()>0">
+                    (
+                    <foreach collection="fuzzyDelFlag"  separator="or" item="item">
+                        `Del_flag` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyDelFlag!=null and rightFuzzyDelFlag.size()>0">
+                    (
+                    <foreach collection="rightFuzzyDelFlag"  separator="or" item="item">
+                        `Del_flag` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                    <if test="takeOutPriorityList != null">
+                        `take_out_priority` in
+                        <foreach collection="takeOutPriorityList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="takeOutPrioritySt !=null">
+                    `take_out_priority` >= #{takeOutPrioritySt} and
+                </if>
+                <if test="takeOutPriorityEd!=null">
+                    `take_out_priority` &lt;= #{takeOutPriorityEd} and
+                </if>
+            </if>
+        </trim>
+        limit 1
+    </select>
+
+    <sql id="allResult">
+        <trim suffixOverrides=",">
+        `id`,
+        `ad_group_id`,
+        `group_name`,
+        `integral_name`,
+        `remark`,
+        `batch_no`,
+        `begin_date`,
+        `end_date`,
+        `dir_integral`,
+        `avail_integral`,
+        `recharge_type`,
+        `type`,
+        `status`,
+        `create_by`,
+        `create_date`,
+        `update_by`,
+        `update_date`,
+        `del_flag`,
+        `take_out_priority`,
+        </trim>
+    </sql>
+
+
+
+    <sql id="baseResult">
+        <trim suffixOverrides=",">
+            <if test = "(_parameter instanceof com.hy.model.AdGroupDirIntegral$QueryBuilder) == true">
+
+                <if test="fetchFields==null">
+                    <include refid="allResult"></include>
+                </if>
+                <if test="fetchFields!=null">
+                    <if test="fetchFields.AllFields !=null">
+                        <include refid="allResult"></include>
+                    </if>
+                    <if test="fetchFields.AllFields ==null and fetchFields.fetchFields==null and fetchFields.excludeFields==null and fetchFields.otherFields==null">
+                        <include refid="allResult"></include>
+                    </if>
+                    <if test="fetchFields.AllFields==null and fetchFields.fetchFields!=null">
+                    <if test="fetchFields.fetchFields.id==true">
+                        `id`,
+                    </if>
+                    <if test="fetchFields.fetchFields.adGroupId==true">
+                        `ad_group_id`,
+                    </if>
+                    <if test="fetchFields.fetchFields.groupName==true">
+                        `group_name`,
+                    </if>
+                    <if test="fetchFields.fetchFields.integralName==true">
+                        `integral_name`,
+                    </if>
+                    <if test="fetchFields.fetchFields.remark==true">
+                        `remark`,
+                    </if>
+                    <if test="fetchFields.fetchFields.batchNo==true">
+                        `batch_no`,
+                    </if>
+                    <if test="fetchFields.fetchFields.beginDate==true">
+                        `begin_date`,
+                    </if>
+                    <if test="fetchFields.fetchFields.endDate==true">
+                        `end_date`,
+                    </if>
+                    <if test="fetchFields.fetchFields.dirIntegral==true">
+                        `dir_integral`,
+                    </if>
+                    <if test="fetchFields.fetchFields.availIntegral==true">
+                        `avail_integral`,
+                    </if>
+                    <if test="fetchFields.fetchFields.rechargeType==true">
+                        `recharge_type`,
+                    </if>
+                    <if test="fetchFields.fetchFields.type==true">
+                        `type`,
+                    </if>
+                    <if test="fetchFields.fetchFields.status==true">
+                        `status`,
+                    </if>
+                    <if test="fetchFields.fetchFields.createBy==true">
+                        `create_by`,
+                    </if>
+                    <if test="fetchFields.fetchFields.createDate==true">
+                        `create_date`,
+                    </if>
+                    <if test="fetchFields.fetchFields.updateBy==true">
+                        `update_by`,
+                    </if>
+                    <if test="fetchFields.fetchFields.updateDate==true">
+                        `update_date`,
+                    </if>
+                    <if test="fetchFields.fetchFields.delFlag==true">
+                        `del_flag`,
+                    </if>
+                    <if test="fetchFields.fetchFields.takeOutPriority==true">
+                        `take_out_priority`,
+                    </if>
+                    </if>
+                    <if test="fetchFields.AllFields==null and fetchFields.excludeFields!=null">
+                    <if test="fetchFields.excludeFields.id==null">
+                        `id`,
+                    </if>
+                    <if test="fetchFields.excludeFields.adGroupId==null">
+                        `ad_group_id`,
+                    </if>
+                    <if test="fetchFields.excludeFields.groupName==null">
+                        `group_name`,
+                    </if>
+                    <if test="fetchFields.excludeFields.integralName==null">
+                        `integral_name`,
+                    </if>
+                    <if test="fetchFields.excludeFields.remark==null">
+                        `remark`,
+                    </if>
+                    <if test="fetchFields.excludeFields.batchNo==null">
+                        `batch_no`,
+                    </if>
+                    <if test="fetchFields.excludeFields.beginDate==null">
+                        `begin_date`,
+                    </if>
+                    <if test="fetchFields.excludeFields.endDate==null">
+                        `end_date`,
+                    </if>
+                    <if test="fetchFields.excludeFields.dirIntegral==null">
+                        `dir_integral`,
+                    </if>
+                    <if test="fetchFields.excludeFields.availIntegral==null">
+                        `avail_integral`,
+                    </if>
+                    <if test="fetchFields.excludeFields.rechargeType==null">
+                        `recharge_type`,
+                    </if>
+                    <if test="fetchFields.excludeFields.type==null">
+                        `type`,
+                    </if>
+                    <if test="fetchFields.excludeFields.status==null">
+                        `status`,
+                    </if>
+                    <if test="fetchFields.excludeFields.createBy==null">
+                        `create_by`,
+                    </if>
+                    <if test="fetchFields.excludeFields.createDate==null">
+                        `create_date`,
+                    </if>
+                    <if test="fetchFields.excludeFields.updateBy==null">
+                        `update_by`,
+                    </if>
+                    <if test="fetchFields.excludeFields.updateDate==null">
+                        `update_date`,
+                    </if>
+                    <if test="fetchFields.excludeFields.delFlag==null">
+                        `del_flag`,
+                    </if>
+                    <if test="fetchFields.excludeFields.takeOutPriority==null">
+                        `take_out_priority`,
+                    </if>
+                    </if>
+                    <if test="fetchFields.otherFields!=null and fetchFields.otherFields.size>0">
+                        <foreach collection="fetchFields.otherFields" index="index" item="item" separator=",">
+                        `#{item}`
+                        </foreach>
+                    </if>
+                </if>
+            </if>
+            <if test="(_parameter instanceof com.hy.model.AdGroupDirIntegral$QueryBuilder) == false" >
+                <include refid="allResult"></include>
+            </if>
+
+        </trim>
+    </sql>
+
+
+</mapper>

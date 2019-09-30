@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hy.dao.base.AdGroupCodeUserRelBaseMapper">
+
+
+    <insert id="insertAdGroupCodeUserRel"  useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO `ad_group_code_user_rel`
+        (
+        <trim suffixOverrides=",">
+                    <if test="id!=null">
+                        `id`,
+                    </if>
+                    <if test="groupCodeId!=null">
+                        `group_code_id`,
+                    </if>
+                    <if test="userId!=null">
+                        `user_id`,
+                    </if>
+                    <if test="remark!=null">
+                        `remark`,
+                    </if>
+                    <if test="bindTime!=null">
+                        `bind_time`,
+                    </if>
+                    <if test="delFlag!=null">
+                        `del_flag`,
+                    </if>
+                    <if test="createDate!=null">
+                        `create_date`,
+                    </if>
+                    <if test="updateDate!=null">
+                        `update_date`,
+                    </if>
+                    <if test="createBy!=null">
+                        `create_by`,
+                    </if>
+                    <if test="updateBy!=null">
+                        `update_by`,
+                    </if>
+        </trim>
+        )
+        VALUES
+        (
+        <trim suffixOverrides=",">
+                <if test="id!=null">
+                    #{id},
+                </if>
+                <if test="groupCodeId!=null">
+                    #{groupCodeId},
+                </if>
+                <if test="userId!=null">
+                    #{userId},
+                </if>
+                <if test="remark!=null">
+                    #{remark},
+                </if>
+                <if test="bindTime!=null">
+                    #{bindTime},
+                </if>
+                <if test="delFlag!=null">
+                    #{delFlag},
+                </if>
+                <if test="createDate!=null">
+                    #{createDate},
+                </if>
+                <if test="updateDate!=null">
+                    #{updateDate},
+                </if>
+                <if test="createBy!=null">
+                    #{createBy},
+                </if>
+                <if test="updateBy!=null">
+                    #{updateBy},
+                </if>
+        </trim>
+        )
+    </insert>
+
+
+
+
+    <update id="updateAdGroupCodeUserRel">
+        UPDATE `ad_group_code_user_rel`
+        SET
+        <trim suffixOverrides=",">
+            <if test="groupCodeId != null">
+                `group_code_id` = #{groupCodeId},
+            </if>
+            <if test="userId != null">
+                `user_id` = #{userId},
+            </if>
+            <if test="remark != null and remark!=''">
+                `remark` = #{remark},
+            </if>
+            <if test="bindTime != null">
+                `bind_time` = #{bindTime},
+            </if>
+            <if test="delFlag != null">
+                `del_flag` = #{delFlag},
+            </if>
+            <if test="createDate != null">
+                `create_date` = #{createDate},
+            </if>
+            <if test="updateDate != null">
+                `update_date` = #{updateDate},
+            </if>
+            <if test="createBy != null and createBy!=''">
+                `create_by` = #{createBy},
+            </if>
+            <if test="updateBy != null and updateBy!=''">
+                `update_by` = #{updateBy},
+            </if>
+        </trim>
+        WHERE
+        <trim suffixOverrides="and">
+                `id` = #{id} and
+        </trim>
+    </update>
+
+    <update id="update">
+        UPDATE `ad_group_code_user_rel`
+        SET
+        <trim suffixOverrides=",">
+        <if test="set.groupCodeId != null">
+            `group_code_id` = #{set.groupCodeId},
+        </if>
+        <if test="set.userId != null">
+            `user_id` = #{set.userId},
+        </if>
+        <if test="set.remark != null and set.remark!=''">
+            `remark` = #{set.remark},
+        </if>
+        <if test="set.bindTime != null">
+            `bind_time` = #{set.bindTime},
+        </if>
+        <if test="set.delFlag != null">
+            `del_flag` = #{set.delFlag},
+        </if>
+        <if test="set.createDate != null">
+            `create_date` = #{set.createDate},
+        </if>
+        <if test="set.updateDate != null">
+            `update_date` = #{set.updateDate},
+        </if>
+        <if test="set.createBy != null and set.createBy!=''">
+            `create_by` = #{set.createBy},
+        </if>
+        <if test="set.updateBy != null and set.updateBy!=''">
+            `update_by` = #{set.updateBy},
+        </if>
+        </trim>
+        <trim prefix="where" suffixOverrides="and | or">
+                <if test="where.idList != null">
+                    `id` in
+                    <foreach collection="where.idList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.idSt !=null">
+                `id` >= #{where.idSt} and
+            </if>
+            <if test="where.idEd!=null">
+                `id` &lt;= #{where.idEd} and
+            </if>
+                <if test="where.groupCodeIdList != null">
+                    `group_code_id` in
+                    <foreach collection="where.groupCodeIdList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.groupCodeIdSt !=null">
+                `group_code_id` >= #{where.groupCodeIdSt} and
+            </if>
+            <if test="where.groupCodeIdEd!=null">
+                `group_code_id` &lt;= #{where.groupCodeIdEd} and
+            </if>
+                <if test="where.userIdList != null">
+                    `user_id` in
+                    <foreach collection="where.userIdList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.userIdSt !=null">
+                `user_id` >= #{where.userIdSt} and
+            </if>
+            <if test="where.userIdEd!=null">
+                `user_id` &lt;= #{where.userIdEd} and
+            </if>
+                <if test="where.remarkList != null">
+                    `remark` in
+                    <foreach collection="where.remarkList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test ="where.fuzzyRemark!=null and where.fuzzyRemark.size()>0">
+                (
+                <foreach collection="where.fuzzyRemark"  separator="or" item="item">
+                    `Remark` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test ="where.rightFuzzyRemark!=null and where.rightFuzzyRemark.size()>0">
+                (
+                <foreach collection="where.rightFuzzyRemark"  separator="or" item="item">
+                    `Remark` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+                <if test="where.bindTimeList != null">
+                    `bind_time` in
+                    <foreach collection="where.bindTimeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.bindTimeSt !=null">
+                `bind_time` >= #{where.bindTimeSt} and
+            </if>
+            <if test="where.bindTimeEd!=null">
+                `bind_time` &lt;= #{where.bindTimeEd} and
+            </if>
+                <if test="where.delFlagList != null">
+                    `del_flag` in
+                    <foreach collection="where.delFlagList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.delFlagSt !=null">
+                `del_flag` >= #{where.delFlagSt} and
+            </if>
+            <if test="where.delFlagEd!=null">
+                `del_flag` &lt;= #{where.delFlagEd} and
+            </if>
+                <if test="where.createDateList != null">
+                    `create_date` in
+                    <foreach collection="where.createDateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.createDateSt !=null">
+                `create_date` >= #{where.createDateSt} and
+            </if>
+            <if test="where.createDateEd!=null">
+                `create_date` &lt;= #{where.createDateEd} and
+            </if>
+                <if test="where.updateDateList != null">
+                    `update_date` in
+                    <foreach collection="where.updateDateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.updateDateSt !=null">
+                `update_date` >= #{where.updateDateSt} and
+            </if>
+            <if test="where.updateDateEd!=null">
+                `update_date` &lt;= #{where.updateDateEd} and
+            </if>
+                <if test="where.createByList != null">
+                    `create_by` in
+                    <foreach collection="where.createByList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test ="where.fuzzyCreateBy!=null and where.fuzzyCreateBy.size()>0">
+                (
+                <foreach collection="where.fuzzyCreateBy"  separator="or" item="item">
+                    `Create_by` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test ="where.rightFuzzyCreateBy!=null and where.rightFuzzyCreateBy.size()>0">
+                (
+                <foreach collection="where.rightFuzzyCreateBy"  separator="or" item="item">
+                    `Create_by` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+                <if test="where.updateByList != null">
+                    `update_by` in
+                    <foreach collection="where.updateByList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test ="where.fuzzyUpdateBy!=null and where.fuzzyUpdateBy.size()>0">
+                (
+                <foreach collection="where.fuzzyUpdateBy"  separator="or" item="item">
+                    `Update_by` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test ="where.rightFuzzyUpdateBy!=null and where.rightFuzzyUpdateBy.size()>0">
+                (
+                <foreach collection="where.rightFuzzyUpdateBy"  separator="or" item="item">
+                    `Update_by` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+        </trim>
+    </update>
+
+
+    <resultMap type="com.hy.model.AdGroupCodeUserRel" id="AdGroupCodeUserRelMap">
+        <result property="id" column="id"/>
+        <result property="groupCodeId" column="group_code_id"/>
+        <result property="userId" column="user_id"/>
+        <result property="remark" column="remark"/>
+        <result property="bindTime" column="bind_time"/>
+        <result property="delFlag" column="del_flag"/>
+        <result property="createDate" column="create_date"/>
+        <result property="updateDate" column="update_date"/>
+        <result property="createBy" column="create_by"/>
+        <result property="updateBy" column="update_by"/>
+    </resultMap>
+
+
+    <select id="queryAdGroupCodeUserRel" resultMap="AdGroupCodeUserRelMap">
+        select
+        <include refid="baseResult"></include>
+        from  `ad_group_code_user_rel`
+        <trim prefix="where" suffixOverrides="and | or">
+            <if test="id != null">
+                `id` = #{id} and
+            </if>
+            <if test="groupCodeId != null">
+                `group_code_id` = #{groupCodeId} and
+            </if>
+            <if test="userId != null">
+                `user_id` = #{userId} and
+            </if>
+            <if test="remark != null and remark!=''">
+                `remark` = #{remark} and
+            </if>
+            <if test="bindTime != null">
+                `bind_time` = #{bindTime} and
+            </if>
+            <if test="delFlag != null">
+                `del_flag` = #{delFlag} and
+            </if>
+            <if test="createDate != null">
+                `create_date` = #{createDate} and
+            </if>
+            <if test="updateDate != null">
+                `update_date` = #{updateDate} and
+            </if>
+            <if test="createBy != null and createBy!=''">
+                `create_by` = #{createBy} and
+            </if>
+            <if test="updateBy != null and updateBy!=''">
+                `update_by` = #{updateBy} and
+            </if>
+            <if test = "(_parameter instanceof com.hy.model.AdGroupCodeUserRel$QueryBuilder) == true">
+                <if test="idList != null">
+                    `id` in
+                    <foreach collection="idList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="idSt !=null">
+                    `id` >= #{idSt} and
+                </if>
+                <if test="idEd!=null">
+                    `id` &lt;= #{idEd} and
+                </if>
+                <if test="groupCodeIdList != null">
+                    `group_code_id` in
+                    <foreach collection="groupCodeIdList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="groupCodeIdSt !=null">
+                    `group_code_id` >= #{groupCodeIdSt} and
+                </if>
+                <if test="groupCodeIdEd!=null">
+                    `group_code_id` &lt;= #{groupCodeIdEd} and
+                </if>
+                <if test="userIdList != null">
+                    `user_id` in
+                    <foreach collection="userIdList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="userIdSt !=null">
+                    `user_id` >= #{userIdSt} and
+                </if>
+                <if test="userIdEd!=null">
+                    `user_id` &lt;= #{userIdEd} and
+                </if>
+                <if test="remarkList != null">
+                    `remark` in
+                    <foreach collection="remarkList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test ="fuzzyRemark!=null and fuzzyRemark.size()>0">
+                    (
+                    <foreach collection="fuzzyRemark"  separator="or" item="item">
+                        `Remark` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyRemark!=null and rightFuzzyRemark.size()>0">
+                    (
+                    <foreach collection="rightFuzzyRemark"  separator="or" item="item">
+                        `Remark` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="bindTimeList != null">
+                    `bind_time` in
+                    <foreach collection="bindTimeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="bindTimeSt !=null">
+                    `bind_time` >= #{bindTimeSt} and
+                </if>
+                <if test="bindTimeEd!=null">
+                    `bind_time` &lt;= #{bindTimeEd} and
+                </if>
+                <if test="delFlagList != null">
+                    `del_flag` in
+                    <foreach collection="delFlagList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="delFlagSt !=null">
+                    `del_flag` >= #{delFlagSt} and
+                </if>
+                <if test="delFlagEd!=null">
+                    `del_flag` &lt;= #{delFlagEd} and
+                </if>
+                <if test="createDateList != null">
+                    `create_date` in
+                    <foreach collection="createDateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="createDateSt !=null">
+                    `create_date` >= #{createDateSt} and
+                </if>
+                <if test="createDateEd!=null">
+                    `create_date` &lt;= #{createDateEd} and
+                </if>
+                <if test="updateDateList != null">
+                    `update_date` in
+                    <foreach collection="updateDateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="updateDateSt !=null">
+                    `update_date` >= #{updateDateSt} and
+                </if>
+                <if test="updateDateEd!=null">
+                    `update_date` &lt;= #{updateDateEd} and
+                </if>
+                <if test="createByList != null">
+                    `create_by` in
+                    <foreach collection="createByList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test ="fuzzyCreateBy!=null and fuzzyCreateBy.size()>0">
+                    (
+                    <foreach collection="fuzzyCreateBy"  separator="or" item="item">
+                        `Create_by` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyCreateBy!=null and rightFuzzyCreateBy.size()>0">
+                    (
+                    <foreach collection="rightFuzzyCreateBy"  separator="or" item="item">
+                        `Create_by` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="updateByList != null">
+                    `update_by` in
+                    <foreach collection="updateByList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test ="fuzzyUpdateBy!=null and fuzzyUpdateBy.size()>0">
+                    (
+                    <foreach collection="fuzzyUpdateBy"  separator="or" item="item">
+                        `Update_by` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyUpdateBy!=null and rightFuzzyUpdateBy.size()>0">
+                    (
+                    <foreach collection="rightFuzzyUpdateBy"  separator="or" item="item">
+                        `Update_by` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+            </if>
+        </trim>
+    </select>
+
+    <select id="queryAdGroupCodeUserRelLimit1" resultMap="AdGroupCodeUserRelMap">
+        select
+        <include refid="baseResult"></include>
+        from  `ad_group_code_user_rel`
+        <trim prefix="where" suffixOverrides="and | or">
+            <if test="id != null">
+                `id` = #{id} and
+            </if>
+            <if test="groupCodeId != null">
+                `group_code_id` = #{groupCodeId} and
+            </if>
+            <if test="userId != null">
+                `user_id` = #{userId} and
+            </if>
+            <if test="remark != null and remark!=''">
+                `remark` = #{remark} and
+            </if>
+            <if test="bindTime != null">
+                `bind_time` = #{bindTime} and
+            </if>
+            <if test="delFlag != null">
+                `del_flag` = #{delFlag} and
+            </if>
+            <if test="createDate != null">
+                `create_date` = #{createDate} and
+            </if>
+            <if test="updateDate != null">
+                `update_date` = #{updateDate} and
+            </if>
+            <if test="createBy != null and createBy!=''">
+                `create_by` = #{createBy} and
+            </if>
+            <if test="updateBy != null and updateBy!=''">
+                `update_by` = #{updateBy} and
+            </if>
+            <if test = "(_parameter instanceof com.hy.model.AdGroupCodeUserRel$QueryBuilder) == true">
+                    <if test="idList != null">
+                        `id` in
+                        <foreach collection="idList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="idSt !=null">
+                    `id` >= #{idSt} and
+                </if>
+                <if test="idEd!=null">
+                    `id` &lt;= #{idEd} and
+                </if>
+                    <if test="groupCodeIdList != null">
+                        `group_code_id` in
+                        <foreach collection="groupCodeIdList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="groupCodeIdSt !=null">
+                    `group_code_id` >= #{groupCodeIdSt} and
+                </if>
+                <if test="groupCodeIdEd!=null">
+                    `group_code_id` &lt;= #{groupCodeIdEd} and
+                </if>
+                    <if test="userIdList != null">
+                        `user_id` in
+                        <foreach collection="userIdList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="userIdSt !=null">
+                    `user_id` >= #{userIdSt} and
+                </if>
+                <if test="userIdEd!=null">
+                    `user_id` &lt;= #{userIdEd} and
+                </if>
+                    <if test="remarkList != null">
+                        `remark` in
+                        <foreach collection="remarkList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test ="fuzzyRemark!=null and fuzzyRemark.size()>0">
+                    (
+                    <foreach collection="fuzzyRemark"  separator="or" item="item">
+                        `Remark` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyRemark!=null and rightFuzzyRemark.size()>0">
+                    (
+                    <foreach collection="rightFuzzyRemark"  separator="or" item="item">
+                        `Remark` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                    <if test="bindTimeList != null">
+                        `bind_time` in
+                        <foreach collection="bindTimeList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="bindTimeSt !=null">
+                    `bind_time` >= #{bindTimeSt} and
+                </if>
+                <if test="bindTimeEd!=null">
+                    `bind_time` &lt;= #{bindTimeEd} and
+                </if>
+                    <if test="delFlagList != null">
+                        `del_flag` in
+                        <foreach collection="delFlagList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="delFlagSt !=null">
+                    `del_flag` >= #{delFlagSt} and
+                </if>
+                <if test="delFlagEd!=null">
+                    `del_flag` &lt;= #{delFlagEd} and
+                </if>
+                    <if test="createDateList != null">
+                        `create_date` in
+                        <foreach collection="createDateList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="createDateSt !=null">
+                    `create_date` >= #{createDateSt} and
+                </if>
+                <if test="createDateEd!=null">
+                    `create_date` &lt;= #{createDateEd} and
+                </if>
+                    <if test="updateDateList != null">
+                        `update_date` in
+                        <foreach collection="updateDateList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="updateDateSt !=null">
+                    `update_date` >= #{updateDateSt} and
+                </if>
+                <if test="updateDateEd!=null">
+                    `update_date` &lt;= #{updateDateEd} and
+                </if>
+                    <if test="createByList != null">
+                        `create_by` in
+                        <foreach collection="createByList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test ="fuzzyCreateBy!=null and fuzzyCreateBy.size()>0">
+                    (
+                    <foreach collection="fuzzyCreateBy"  separator="or" item="item">
+                        `Create_by` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyCreateBy!=null and rightFuzzyCreateBy.size()>0">
+                    (
+                    <foreach collection="rightFuzzyCreateBy"  separator="or" item="item">
+                        `Create_by` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                    <if test="updateByList != null">
+                        `update_by` in
+                        <foreach collection="updateByList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test ="fuzzyUpdateBy!=null and fuzzyUpdateBy.size()>0">
+                    (
+                    <foreach collection="fuzzyUpdateBy"  separator="or" item="item">
+                        `Update_by` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyUpdateBy!=null and rightFuzzyUpdateBy.size()>0">
+                    (
+                    <foreach collection="rightFuzzyUpdateBy"  separator="or" item="item">
+                        `Update_by` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+            </if>
+        </trim>
+        limit 1
+    </select>
+
+    <sql id="allResult">
+        <trim suffixOverrides=",">
+        `id`,
+        `group_code_id`,
+        `user_id`,
+        `remark`,
+        `bind_time`,
+        `del_flag`,
+        `create_date`,
+        `update_date`,
+        `create_by`,
+        `update_by`,
+        </trim>
+    </sql>
+
+
+
+    <sql id="baseResult">
+        <trim suffixOverrides=",">
+            <if test = "(_parameter instanceof com.hy.model.AdGroupCodeUserRel$QueryBuilder) == true">
+
+                <if test="fetchFields==null">
+                    <include refid="allResult"></include>
+                </if>
+                <if test="fetchFields!=null">
+                    <if test="fetchFields.AllFields !=null">
+                        <include refid="allResult"></include>
+                    </if>
+                    <if test="fetchFields.AllFields ==null and fetchFields.fetchFields==null and fetchFields.excludeFields==null and fetchFields.otherFields==null">
+                        <include refid="allResult"></include>
+                    </if>
+                    <if test="fetchFields.AllFields==null and fetchFields.fetchFields!=null">
+                    <if test="fetchFields.fetchFields.id==true">
+                        `id`,
+                    </if>
+                    <if test="fetchFields.fetchFields.groupCodeId==true">
+                        `group_code_id`,
+                    </if>
+                    <if test="fetchFields.fetchFields.userId==true">
+                        `user_id`,
+                    </if>
+                    <if test="fetchFields.fetchFields.remark==true">
+                        `remark`,
+                    </if>
+                    <if test="fetchFields.fetchFields.bindTime==true">
+                        `bind_time`,
+                    </if>
+                    <if test="fetchFields.fetchFields.delFlag==true">
+                        `del_flag`,
+                    </if>
+                    <if test="fetchFields.fetchFields.createDate==true">
+                        `create_date`,
+                    </if>
+                    <if test="fetchFields.fetchFields.updateDate==true">
+                        `update_date`,
+                    </if>
+                    <if test="fetchFields.fetchFields.createBy==true">
+                        `create_by`,
+                    </if>
+                    <if test="fetchFields.fetchFields.updateBy==true">
+                        `update_by`,
+                    </if>
+                    </if>
+                    <if test="fetchFields.AllFields==null and fetchFields.excludeFields!=null">
+                    <if test="fetchFields.excludeFields.id==null">
+                        `id`,
+                    </if>
+                    <if test="fetchFields.excludeFields.groupCodeId==null">
+                        `group_code_id`,
+                    </if>
+                    <if test="fetchFields.excludeFields.userId==null">
+                        `user_id`,
+                    </if>
+                    <if test="fetchFields.excludeFields.remark==null">
+                        `remark`,
+                    </if>
+                    <if test="fetchFields.excludeFields.bindTime==null">
+                        `bind_time`,
+                    </if>
+                    <if test="fetchFields.excludeFields.delFlag==null">
+                        `del_flag`,
+                    </if>
+                    <if test="fetchFields.excludeFields.createDate==null">
+                        `create_date`,
+                    </if>
+                    <if test="fetchFields.excludeFields.updateDate==null">
+                        `update_date`,
+                    </if>
+                    <if test="fetchFields.excludeFields.createBy==null">
+                        `create_by`,
+                    </if>
+                    <if test="fetchFields.excludeFields.updateBy==null">
+                        `update_by`,
+                    </if>
+                    </if>
+                    <if test="fetchFields.otherFields!=null and fetchFields.otherFields.size>0">
+                        <foreach collection="fetchFields.otherFields" index="index" item="item" separator=",">
+                        `#{item}`
+                        </foreach>
+                    </if>
+                </if>
+            </if>
+            <if test="(_parameter instanceof com.hy.model.AdGroupCodeUserRel$QueryBuilder) == false" >
+                <include refid="allResult"></include>
+            </if>
+
+        </trim>
+    </sql>
+
+
+</mapper>

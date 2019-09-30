@@ -1,0 +1,2141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hy.dao.base.OrderBaseMapper">
+
+
+    <insert id="insertOrder"  useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO `_order`
+        (
+        <trim suffixOverrides=",">
+                    <if test="id!=null">
+                        `id`,
+                    </if>
+                    <if test="userid!=null">
+                        `userid`,
+                    </if>
+                    <if test="orderUserId!=null">
+                        `orderUserId`,
+                    </if>
+                    <if test="bussinessId!=null">
+                        `bussinessId`,
+                    </if>
+                    <if test="storesId!=null">
+                        `storesId`,
+                    </if>
+                    <if test="payPassword!=null">
+                        `payPassword`,
+                    </if>
+                    <if test="verificationCode!=null">
+                        `verificationCode`,
+                    </if>
+                    <if test="amount!=null">
+                        `amount`,
+                    </if>
+                    <if test="totalAmount!=null">
+                        `totalAmount`,
+                    </if>
+                    <if test="price!=null">
+                        `price`,
+                    </if>
+                    <if test="totalPrice!=null">
+                        `totalPrice`,
+                    </if>
+                    <if test="payType!=null">
+                        `payType`,
+                    </if>
+                    <if test="orderNumber!=null">
+                        `orderNumber`,
+                    </if>
+                    <if test="serialNumber!=null">
+                        `serialNumber`,
+                    </if>
+                    <if test="orderDate!=null">
+                        `orderDate`,
+                    </if>
+                    <if test="originOrderNumber!=null">
+                        `originOrderNumber`,
+                    </if>
+                    <if test="state!=null">
+                        `state`,
+                    </if>
+                    <if test="orderType!=null">
+                        `orderType`,
+                    </if>
+                    <if test="type!=null">
+                        `type`,
+                    </if>
+                    <if test="source!=null">
+                        `source`,
+                    </if>
+                    <if test="isPayPassword!=null">
+                        `isPayPassword`,
+                    </if>
+                    <if test="orderDetail!=null">
+                        `orderDetail`,
+                    </if>
+                    <if test="isRebate!=null">
+                        `isRebate`,
+                    </if>
+                    <if test="BusinessRebate!=null">
+                        `BusinessRebate`,
+                    </if>
+                    <if test="UserRebate!=null">
+                        `UserRebate`,
+                    </if>
+                    <if test="createDateTime!=null">
+                        `createDateTime`,
+                    </if>
+                    <if test="checkState!=null">
+                        `check_state`,
+                    </if>
+                    <if test="cashNumber!=null">
+                        `cash_number`,
+                    </if>
+                    <if test="bigOrderNumber!=null">
+                        `big_order_number`,
+                    </if>
+        </trim>
+        )
+        VALUES
+        (
+        <trim suffixOverrides=",">
+                <if test="id!=null">
+                    #{id},
+                </if>
+                <if test="userid!=null">
+                    #{userid},
+                </if>
+                <if test="orderUserId!=null">
+                    #{orderUserId},
+                </if>
+                <if test="bussinessId!=null">
+                    #{bussinessId},
+                </if>
+                <if test="storesId!=null">
+                    #{storesId},
+                </if>
+                <if test="payPassword!=null">
+                    #{payPassword},
+                </if>
+                <if test="verificationCode!=null">
+                    #{verificationCode},
+                </if>
+                <if test="amount!=null">
+                    #{amount},
+                </if>
+                <if test="totalAmount!=null">
+                    #{totalAmount},
+                </if>
+                <if test="price!=null">
+                    #{price},
+                </if>
+                <if test="totalPrice!=null">
+                    #{totalPrice},
+                </if>
+                <if test="payType!=null">
+                    #{payType},
+                </if>
+                <if test="orderNumber!=null">
+                    #{orderNumber},
+                </if>
+                <if test="serialNumber!=null">
+                    #{serialNumber},
+                </if>
+                <if test="orderDate!=null">
+                    #{orderDate},
+                </if>
+                <if test="originOrderNumber!=null">
+                    #{originOrderNumber},
+                </if>
+                <if test="state!=null">
+                    #{state},
+                </if>
+                <if test="orderType!=null">
+                    #{orderType},
+                </if>
+                <if test="type!=null">
+                    #{type},
+                </if>
+                <if test="source!=null">
+                    #{source},
+                </if>
+                <if test="isPayPassword!=null">
+                    #{isPayPassword},
+                </if>
+                <if test="orderDetail!=null">
+                    #{orderDetail},
+                </if>
+                <if test="isRebate!=null">
+                    #{isRebate},
+                </if>
+                <if test="BusinessRebate!=null">
+                    #{BusinessRebate},
+                </if>
+                <if test="UserRebate!=null">
+                    #{UserRebate},
+                </if>
+                <if test="createDateTime!=null">
+                    #{createDateTime},
+                </if>
+                <if test="checkState!=null">
+                    #{checkState},
+                </if>
+                <if test="cashNumber!=null">
+                    #{cashNumber},
+                </if>
+                <if test="bigOrderNumber!=null">
+                    #{bigOrderNumber},
+                </if>
+        </trim>
+        )
+    </insert>
+
+
+
+
+    <update id="updateOrder">
+        UPDATE `_order`
+        SET
+        <trim suffixOverrides=",">
+            <if test="userid != null">
+                `userid` = #{userid},
+            </if>
+            <if test="orderUserId != null">
+                `orderUserId` = #{orderUserId},
+            </if>
+            <if test="bussinessId != null and bussinessId!=''">
+                `bussinessId` = #{bussinessId},
+            </if>
+            <if test="storesId != null and storesId!=''">
+                `storesId` = #{storesId},
+            </if>
+            <if test="payPassword != null and payPassword!=''">
+                `payPassword` = #{payPassword},
+            </if>
+            <if test="verificationCode != null and verificationCode!=''">
+                `verificationCode` = #{verificationCode},
+            </if>
+            <if test="amount != null">
+                `amount` = #{amount},
+            </if>
+            <if test="totalAmount != null">
+                `totalAmount` = #{totalAmount},
+            </if>
+            <if test="price != null">
+                `price` = #{price},
+            </if>
+            <if test="totalPrice != null">
+                `totalPrice` = #{totalPrice},
+            </if>
+            <if test="payType != null">
+                `payType` = #{payType},
+            </if>
+            <if test="orderNumber != null and orderNumber!=''">
+                `orderNumber` = #{orderNumber},
+            </if>
+            <if test="serialNumber != null and serialNumber!=''">
+                `serialNumber` = #{serialNumber},
+            </if>
+            <if test="orderDate != null">
+                `orderDate` = #{orderDate},
+            </if>
+            <if test="originOrderNumber != null and originOrderNumber!=''">
+                `originOrderNumber` = #{originOrderNumber},
+            </if>
+            <if test="state != null">
+                `state` = #{state},
+            </if>
+            <if test="orderType != null">
+                `orderType` = #{orderType},
+            </if>
+            <if test="type != null">
+                `type` = #{type},
+            </if>
+            <if test="source != null">
+                `source` = #{source},
+            </if>
+            <if test="isPayPassword != null">
+                `isPayPassword` = #{isPayPassword},
+            </if>
+            <if test="orderDetail != null and orderDetail!=''">
+                `orderDetail` = #{orderDetail},
+            </if>
+            <if test="isRebate != null">
+                `isRebate` = #{isRebate},
+            </if>
+            <if test="BusinessRebate != null">
+                `BusinessRebate` = #{BusinessRebate},
+            </if>
+            <if test="UserRebate != null">
+                `UserRebate` = #{UserRebate},
+            </if>
+            <if test="createDateTime != null">
+                `createDateTime` = #{createDateTime},
+            </if>
+            <if test="checkState != null">
+                `check_state` = #{checkState},
+            </if>
+            <if test="cashNumber != null and cashNumber!=''">
+                `cash_number` = #{cashNumber},
+            </if>
+            <if test="bigOrderNumber != null and bigOrderNumber!=''">
+                `big_order_number` = #{bigOrderNumber},
+            </if>
+        </trim>
+        WHERE
+        <trim suffixOverrides="and">
+                `id` = #{id} and
+        </trim>
+    </update>
+
+    <update id="update">
+        UPDATE `_order`
+        SET
+        <trim suffixOverrides=",">
+        <if test="set.userid != null">
+            `userid` = #{set.userid},
+        </if>
+        <if test="set.orderUserId != null">
+            `orderUserId` = #{set.orderUserId},
+        </if>
+        <if test="set.bussinessId != null and set.bussinessId!=''">
+            `bussinessId` = #{set.bussinessId},
+        </if>
+        <if test="set.storesId != null and set.storesId!=''">
+            `storesId` = #{set.storesId},
+        </if>
+        <if test="set.payPassword != null and set.payPassword!=''">
+            `payPassword` = #{set.payPassword},
+        </if>
+        <if test="set.verificationCode != null and set.verificationCode!=''">
+            `verificationCode` = #{set.verificationCode},
+        </if>
+        <if test="set.amount != null">
+            `amount` = #{set.amount},
+        </if>
+        <if test="set.totalAmount != null">
+            `totalAmount` = #{set.totalAmount},
+        </if>
+        <if test="set.price != null">
+            `price` = #{set.price},
+        </if>
+        <if test="set.totalPrice != null">
+            `totalPrice` = #{set.totalPrice},
+        </if>
+        <if test="set.payType != null">
+            `payType` = #{set.payType},
+        </if>
+        <if test="set.orderNumber != null and set.orderNumber!=''">
+            `orderNumber` = #{set.orderNumber},
+        </if>
+        <if test="set.serialNumber != null and set.serialNumber!=''">
+            `serialNumber` = #{set.serialNumber},
+        </if>
+        <if test="set.orderDate != null">
+            `orderDate` = #{set.orderDate},
+        </if>
+        <if test="set.originOrderNumber != null and set.originOrderNumber!=''">
+            `originOrderNumber` = #{set.originOrderNumber},
+        </if>
+        <if test="set.state != null">
+            `state` = #{set.state},
+        </if>
+        <if test="set.orderType != null">
+            `orderType` = #{set.orderType},
+        </if>
+        <if test="set.type != null">
+            `type` = #{set.type},
+        </if>
+        <if test="set.source != null">
+            `source` = #{set.source},
+        </if>
+        <if test="set.isPayPassword != null">
+            `isPayPassword` = #{set.isPayPassword},
+        </if>
+        <if test="set.orderDetail != null and set.orderDetail!=''">
+            `orderDetail` = #{set.orderDetail},
+        </if>
+        <if test="set.isRebate != null">
+            `isRebate` = #{set.isRebate},
+        </if>
+        <if test="set.BusinessRebate != null">
+            `BusinessRebate` = #{set.BusinessRebate},
+        </if>
+        <if test="set.UserRebate != null">
+            `UserRebate` = #{set.UserRebate},
+        </if>
+        <if test="set.createDateTime != null">
+            `createDateTime` = #{set.createDateTime},
+        </if>
+        <if test="set.checkState != null">
+            `check_state` = #{set.checkState},
+        </if>
+        <if test="set.cashNumber != null and set.cashNumber!=''">
+            `cash_number` = #{set.cashNumber},
+        </if>
+        <if test="set.bigOrderNumber != null and set.bigOrderNumber!=''">
+            `big_order_number` = #{set.bigOrderNumber},
+        </if>
+        </trim>
+        <trim prefix="where" suffixOverrides="and | or">
+                <if test="where.idList != null">
+                    `id` in
+                    <foreach collection="where.idList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.idSt !=null">
+                `id` >= #{where.idSt} and
+            </if>
+            <if test="where.idEd!=null">
+                `id` &lt;= #{where.idEd} and
+            </if>
+                <if test="where.useridList != null">
+                    `userid` in
+                    <foreach collection="where.useridList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.useridSt !=null">
+                `userid` >= #{where.useridSt} and
+            </if>
+            <if test="where.useridEd!=null">
+                `userid` &lt;= #{where.useridEd} and
+            </if>
+                <if test="where.orderUserIdList != null">
+                    `orderUserId` in
+                    <foreach collection="where.orderUserIdList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.orderUserIdSt !=null">
+                `orderUserId` >= #{where.orderUserIdSt} and
+            </if>
+            <if test="where.orderUserIdEd!=null">
+                `orderUserId` &lt;= #{where.orderUserIdEd} and
+            </if>
+                <if test="where.bussinessIdList != null">
+                    `bussinessId` in
+                    <foreach collection="where.bussinessIdList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test ="where.fuzzyBussinessId!=null and where.fuzzyBussinessId.size()>0">
+                (
+                <foreach collection="where.fuzzyBussinessId"  separator="or" item="item">
+                    `BussinessId` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test ="where.rightFuzzyBussinessId!=null and where.rightFuzzyBussinessId.size()>0">
+                (
+                <foreach collection="where.rightFuzzyBussinessId"  separator="or" item="item">
+                    `BussinessId` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+                <if test="where.storesIdList != null">
+                    `storesId` in
+                    <foreach collection="where.storesIdList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test ="where.fuzzyStoresId!=null and where.fuzzyStoresId.size()>0">
+                (
+                <foreach collection="where.fuzzyStoresId"  separator="or" item="item">
+                    `StoresId` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test ="where.rightFuzzyStoresId!=null and where.rightFuzzyStoresId.size()>0">
+                (
+                <foreach collection="where.rightFuzzyStoresId"  separator="or" item="item">
+                    `StoresId` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+                <if test="where.payPasswordList != null">
+                    `payPassword` in
+                    <foreach collection="where.payPasswordList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test ="where.fuzzyPayPassword!=null and where.fuzzyPayPassword.size()>0">
+                (
+                <foreach collection="where.fuzzyPayPassword"  separator="or" item="item">
+                    `PayPassword` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test ="where.rightFuzzyPayPassword!=null and where.rightFuzzyPayPassword.size()>0">
+                (
+                <foreach collection="where.rightFuzzyPayPassword"  separator="or" item="item">
+                    `PayPassword` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+                <if test="where.verificationCodeList != null">
+                    `verificationCode` in
+                    <foreach collection="where.verificationCodeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test ="where.fuzzyVerificationCode!=null and where.fuzzyVerificationCode.size()>0">
+                (
+                <foreach collection="where.fuzzyVerificationCode"  separator="or" item="item">
+                    `VerificationCode` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test ="where.rightFuzzyVerificationCode!=null and where.rightFuzzyVerificationCode.size()>0">
+                (
+                <foreach collection="where.rightFuzzyVerificationCode"  separator="or" item="item">
+                    `VerificationCode` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+                <if test="where.amountList != null">
+                    `amount` in
+                    <foreach collection="where.amountList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.amountSt !=null">
+                `amount` >= #{where.amountSt} and
+            </if>
+            <if test="where.amountEd!=null">
+                `amount` &lt;= #{where.amountEd} and
+            </if>
+                <if test="where.totalAmountList != null">
+                    `totalAmount` in
+                    <foreach collection="where.totalAmountList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.totalAmountSt !=null">
+                `totalAmount` >= #{where.totalAmountSt} and
+            </if>
+            <if test="where.totalAmountEd!=null">
+                `totalAmount` &lt;= #{where.totalAmountEd} and
+            </if>
+                <if test="where.priceList != null">
+                    `price` in
+                    <foreach collection="where.priceList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.priceSt !=null">
+                `price` >= #{where.priceSt} and
+            </if>
+            <if test="where.priceEd!=null">
+                `price` &lt;= #{where.priceEd} and
+            </if>
+                <if test="where.totalPriceList != null">
+                    `totalPrice` in
+                    <foreach collection="where.totalPriceList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.totalPriceSt !=null">
+                `totalPrice` >= #{where.totalPriceSt} and
+            </if>
+            <if test="where.totalPriceEd!=null">
+                `totalPrice` &lt;= #{where.totalPriceEd} and
+            </if>
+                <if test="where.payTypeList != null">
+                    `payType` in
+                    <foreach collection="where.payTypeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.payTypeSt !=null">
+                `payType` >= #{where.payTypeSt} and
+            </if>
+            <if test="where.payTypeEd!=null">
+                `payType` &lt;= #{where.payTypeEd} and
+            </if>
+                <if test="where.orderNumberList != null">
+                    `orderNumber` in
+                    <foreach collection="where.orderNumberList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test ="where.fuzzyOrderNumber!=null and where.fuzzyOrderNumber.size()>0">
+                (
+                <foreach collection="where.fuzzyOrderNumber"  separator="or" item="item">
+                    `OrderNumber` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test ="where.rightFuzzyOrderNumber!=null and where.rightFuzzyOrderNumber.size()>0">
+                (
+                <foreach collection="where.rightFuzzyOrderNumber"  separator="or" item="item">
+                    `OrderNumber` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+                <if test="where.serialNumberList != null">
+                    `serialNumber` in
+                    <foreach collection="where.serialNumberList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test ="where.fuzzySerialNumber!=null and where.fuzzySerialNumber.size()>0">
+                (
+                <foreach collection="where.fuzzySerialNumber"  separator="or" item="item">
+                    `SerialNumber` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test ="where.rightFuzzySerialNumber!=null and where.rightFuzzySerialNumber.size()>0">
+                (
+                <foreach collection="where.rightFuzzySerialNumber"  separator="or" item="item">
+                    `SerialNumber` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+                <if test="where.orderDateList != null">
+                    `orderDate` in
+                    <foreach collection="where.orderDateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.orderDateSt !=null">
+                `orderDate` >= #{where.orderDateSt} and
+            </if>
+            <if test="where.orderDateEd!=null">
+                `orderDate` &lt;= #{where.orderDateEd} and
+            </if>
+                <if test="where.originOrderNumberList != null">
+                    `originOrderNumber` in
+                    <foreach collection="where.originOrderNumberList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test ="where.fuzzyOriginOrderNumber!=null and where.fuzzyOriginOrderNumber.size()>0">
+                (
+                <foreach collection="where.fuzzyOriginOrderNumber"  separator="or" item="item">
+                    `OriginOrderNumber` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test ="where.rightFuzzyOriginOrderNumber!=null and where.rightFuzzyOriginOrderNumber.size()>0">
+                (
+                <foreach collection="where.rightFuzzyOriginOrderNumber"  separator="or" item="item">
+                    `OriginOrderNumber` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+                <if test="where.stateList != null">
+                    `state` in
+                    <foreach collection="where.stateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.stateSt !=null">
+                `state` >= #{where.stateSt} and
+            </if>
+            <if test="where.stateEd!=null">
+                `state` &lt;= #{where.stateEd} and
+            </if>
+                <if test="where.orderTypeList != null">
+                    `orderType` in
+                    <foreach collection="where.orderTypeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.orderTypeSt !=null">
+                `orderType` >= #{where.orderTypeSt} and
+            </if>
+            <if test="where.orderTypeEd!=null">
+                `orderType` &lt;= #{where.orderTypeEd} and
+            </if>
+                <if test="where.typeList != null">
+                    `type` in
+                    <foreach collection="where.typeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.typeSt !=null">
+                `type` >= #{where.typeSt} and
+            </if>
+            <if test="where.typeEd!=null">
+                `type` &lt;= #{where.typeEd} and
+            </if>
+                <if test="where.sourceList != null">
+                    `source` in
+                    <foreach collection="where.sourceList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.sourceSt !=null">
+                `source` >= #{where.sourceSt} and
+            </if>
+            <if test="where.sourceEd!=null">
+                `source` &lt;= #{where.sourceEd} and
+            </if>
+                <if test="where.isPayPasswordList != null">
+                    `isPayPassword` in
+                    <foreach collection="where.isPayPasswordList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.isPayPasswordSt !=null">
+                `isPayPassword` >= #{where.isPayPasswordSt} and
+            </if>
+            <if test="where.isPayPasswordEd!=null">
+                `isPayPassword` &lt;= #{where.isPayPasswordEd} and
+            </if>
+                <if test="where.orderDetailList != null">
+                    `orderDetail` in
+                    <foreach collection="where.orderDetailList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test ="where.fuzzyOrderDetail!=null and where.fuzzyOrderDetail.size()>0">
+                (
+                <foreach collection="where.fuzzyOrderDetail"  separator="or" item="item">
+                    `OrderDetail` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test ="where.rightFuzzyOrderDetail!=null and where.rightFuzzyOrderDetail.size()>0">
+                (
+                <foreach collection="where.rightFuzzyOrderDetail"  separator="or" item="item">
+                    `OrderDetail` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+                <if test="where.isRebateList != null">
+                    `isRebate` in
+                    <foreach collection="where.isRebateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.isRebateSt !=null">
+                `isRebate` >= #{where.isRebateSt} and
+            </if>
+            <if test="where.isRebateEd!=null">
+                `isRebate` &lt;= #{where.isRebateEd} and
+            </if>
+                <if test="where.BusinessRebateList != null">
+                    `BusinessRebate` in
+                    <foreach collection="where.BusinessRebateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.BusinessRebateSt !=null">
+                `BusinessRebate` >= #{where.BusinessRebateSt} and
+            </if>
+            <if test="where.BusinessRebateEd!=null">
+                `BusinessRebate` &lt;= #{where.BusinessRebateEd} and
+            </if>
+                <if test="where.UserRebateList != null">
+                    `UserRebate` in
+                    <foreach collection="where.UserRebateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.UserRebateSt !=null">
+                `UserRebate` >= #{where.UserRebateSt} and
+            </if>
+            <if test="where.UserRebateEd!=null">
+                `UserRebate` &lt;= #{where.UserRebateEd} and
+            </if>
+                <if test="where.createDateTimeList != null">
+                    `createDateTime` in
+                    <foreach collection="where.createDateTimeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.createDateTimeSt !=null">
+                `createDateTime` >= #{where.createDateTimeSt} and
+            </if>
+            <if test="where.createDateTimeEd!=null">
+                `createDateTime` &lt;= #{where.createDateTimeEd} and
+            </if>
+                <if test="where.checkStateList != null">
+                    `check_state` in
+                    <foreach collection="where.checkStateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test="where.checkStateSt !=null">
+                `check_state` >= #{where.checkStateSt} and
+            </if>
+            <if test="where.checkStateEd!=null">
+                `check_state` &lt;= #{where.checkStateEd} and
+            </if>
+                <if test="where.cashNumberList != null">
+                    `cash_number` in
+                    <foreach collection="where.cashNumberList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test ="where.fuzzyCashNumber!=null and where.fuzzyCashNumber.size()>0">
+                (
+                <foreach collection="where.fuzzyCashNumber"  separator="or" item="item">
+                    `Cash_number` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test ="where.rightFuzzyCashNumber!=null and where.rightFuzzyCashNumber.size()>0">
+                (
+                <foreach collection="where.rightFuzzyCashNumber"  separator="or" item="item">
+                    `Cash_number` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+                <if test="where.bigOrderNumberList != null">
+                    `big_order_number` in
+                    <foreach collection="where.bigOrderNumberList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+            <if test ="where.fuzzyBigOrderNumber!=null and where.fuzzyBigOrderNumber.size()>0">
+                (
+                <foreach collection="where.fuzzyBigOrderNumber"  separator="or" item="item">
+                    `Big_order_number` like concat('%',#{item},'%')
+                </foreach>
+                ) and
+            </if>
+            <if test ="where.rightFuzzyBigOrderNumber!=null and where.rightFuzzyBigOrderNumber.size()>0">
+                (
+                <foreach collection="where.rightFuzzyBigOrderNumber"  separator="or" item="item">
+                    `Big_order_number` like concat(#{item},'%')
+                </foreach>
+                ) and
+            </if>
+        </trim>
+    </update>
+
+
+    <resultMap type="com.hy.model.Order" id="OrderMap">
+        <result property="id" column="id"/>
+        <result property="userid" column="userid"/>
+        <result property="orderUserId" column="orderUserId"/>
+        <result property="bussinessId" column="bussinessId"/>
+        <result property="storesId" column="storesId"/>
+        <result property="payPassword" column="payPassword"/>
+        <result property="verificationCode" column="verificationCode"/>
+        <result property="amount" column="amount"/>
+        <result property="totalAmount" column="totalAmount"/>
+        <result property="price" column="price"/>
+        <result property="totalPrice" column="totalPrice"/>
+        <result property="payType" column="payType"/>
+        <result property="orderNumber" column="orderNumber"/>
+        <result property="serialNumber" column="serialNumber"/>
+        <result property="orderDate" column="orderDate"/>
+        <result property="originOrderNumber" column="originOrderNumber"/>
+        <result property="state" column="state"/>
+        <result property="orderType" column="orderType"/>
+        <result property="type" column="type"/>
+        <result property="source" column="source"/>
+        <result property="isPayPassword" column="isPayPassword"/>
+        <result property="orderDetail" column="orderDetail"/>
+        <result property="isRebate" column="isRebate"/>
+        <result property="BusinessRebate" column="BusinessRebate"/>
+        <result property="UserRebate" column="UserRebate"/>
+        <result property="createDateTime" column="createDateTime"/>
+        <result property="checkState" column="check_state"/>
+        <result property="cashNumber" column="cash_number"/>
+        <result property="bigOrderNumber" column="big_order_number"/>
+    </resultMap>
+
+
+    <select id="queryOrder" resultMap="OrderMap">
+        select
+        <include refid="baseResult"></include>
+        from  `_order`
+        <trim prefix="where" suffixOverrides="and | or">
+            <if test="id != null">
+                `id` = #{id} and
+            </if>
+            <if test="userid != null">
+                `userid` = #{userid} and
+            </if>
+            <if test="orderUserId != null">
+                `orderUserId` = #{orderUserId} and
+            </if>
+            <if test="bussinessId != null and bussinessId!=''">
+                `bussinessId` = #{bussinessId} and
+            </if>
+            <if test="storesId != null and storesId!=''">
+                `storesId` = #{storesId} and
+            </if>
+            <if test="payPassword != null and payPassword!=''">
+                `payPassword` = #{payPassword} and
+            </if>
+            <if test="verificationCode != null and verificationCode!=''">
+                `verificationCode` = #{verificationCode} and
+            </if>
+            <if test="amount != null">
+                `amount` = #{amount} and
+            </if>
+            <if test="totalAmount != null">
+                `totalAmount` = #{totalAmount} and
+            </if>
+            <if test="price != null">
+                `price` = #{price} and
+            </if>
+            <if test="totalPrice != null">
+                `totalPrice` = #{totalPrice} and
+            </if>
+            <if test="payType != null">
+                `payType` = #{payType} and
+            </if>
+            <if test="orderNumber != null and orderNumber!=''">
+                `orderNumber` = #{orderNumber} and
+            </if>
+            <if test="serialNumber != null and serialNumber!=''">
+                `serialNumber` = #{serialNumber} and
+            </if>
+            <if test="orderDate != null">
+                `orderDate` = #{orderDate} and
+            </if>
+            <if test="originOrderNumber != null and originOrderNumber!=''">
+                `originOrderNumber` = #{originOrderNumber} and
+            </if>
+            <if test="state != null">
+                `state` = #{state} and
+            </if>
+            <if test="orderType != null">
+                `orderType` = #{orderType} and
+            </if>
+            <if test="type != null">
+                `type` = #{type} and
+            </if>
+            <if test="source != null">
+                `source` = #{source} and
+            </if>
+            <if test="isPayPassword != null">
+                `isPayPassword` = #{isPayPassword} and
+            </if>
+            <if test="orderDetail != null and orderDetail!=''">
+                `orderDetail` = #{orderDetail} and
+            </if>
+            <if test="isRebate != null">
+                `isRebate` = #{isRebate} and
+            </if>
+            <if test="BusinessRebate != null">
+                `BusinessRebate` = #{BusinessRebate} and
+            </if>
+            <if test="UserRebate != null">
+                `UserRebate` = #{UserRebate} and
+            </if>
+            <if test="createDateTime != null">
+                `createDateTime` = #{createDateTime} and
+            </if>
+            <if test="checkState != null">
+                `check_state` = #{checkState} and
+            </if>
+            <if test="cashNumber != null and cashNumber!=''">
+                `cash_number` = #{cashNumber} and
+            </if>
+            <if test="bigOrderNumber != null and bigOrderNumber!=''">
+                `big_order_number` = #{bigOrderNumber} and
+            </if>
+            <if test = "(_parameter instanceof com.hy.model.Order$QueryBuilder) == true">
+                <if test="idList != null">
+                    `id` in
+                    <foreach collection="idList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="idSt !=null">
+                    `id` >= #{idSt} and
+                </if>
+                <if test="idEd!=null">
+                    `id` &lt;= #{idEd} and
+                </if>
+                <if test="useridList != null">
+                    `userid` in
+                    <foreach collection="useridList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="useridSt !=null">
+                    `userid` >= #{useridSt} and
+                </if>
+                <if test="useridEd!=null">
+                    `userid` &lt;= #{useridEd} and
+                </if>
+                <if test="orderUserIdList != null">
+                    `orderUserId` in
+                    <foreach collection="orderUserIdList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="orderUserIdSt !=null">
+                    `orderUserId` >= #{orderUserIdSt} and
+                </if>
+                <if test="orderUserIdEd!=null">
+                    `orderUserId` &lt;= #{orderUserIdEd} and
+                </if>
+                <if test="bussinessIdList != null">
+                    `bussinessId` in
+                    <foreach collection="bussinessIdList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test ="fuzzyBussinessId!=null and fuzzyBussinessId.size()>0">
+                    (
+                    <foreach collection="fuzzyBussinessId"  separator="or" item="item">
+                        `BussinessId` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyBussinessId!=null and rightFuzzyBussinessId.size()>0">
+                    (
+                    <foreach collection="rightFuzzyBussinessId"  separator="or" item="item">
+                        `BussinessId` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="storesIdList != null">
+                    `storesId` in
+                    <foreach collection="storesIdList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test ="fuzzyStoresId!=null and fuzzyStoresId.size()>0">
+                    (
+                    <foreach collection="fuzzyStoresId"  separator="or" item="item">
+                        `StoresId` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyStoresId!=null and rightFuzzyStoresId.size()>0">
+                    (
+                    <foreach collection="rightFuzzyStoresId"  separator="or" item="item">
+                        `StoresId` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="payPasswordList != null">
+                    `payPassword` in
+                    <foreach collection="payPasswordList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test ="fuzzyPayPassword!=null and fuzzyPayPassword.size()>0">
+                    (
+                    <foreach collection="fuzzyPayPassword"  separator="or" item="item">
+                        `PayPassword` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyPayPassword!=null and rightFuzzyPayPassword.size()>0">
+                    (
+                    <foreach collection="rightFuzzyPayPassword"  separator="or" item="item">
+                        `PayPassword` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="verificationCodeList != null">
+                    `verificationCode` in
+                    <foreach collection="verificationCodeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test ="fuzzyVerificationCode!=null and fuzzyVerificationCode.size()>0">
+                    (
+                    <foreach collection="fuzzyVerificationCode"  separator="or" item="item">
+                        `VerificationCode` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyVerificationCode!=null and rightFuzzyVerificationCode.size()>0">
+                    (
+                    <foreach collection="rightFuzzyVerificationCode"  separator="or" item="item">
+                        `VerificationCode` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="amountList != null">
+                    `amount` in
+                    <foreach collection="amountList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="amountSt !=null">
+                    `amount` >= #{amountSt} and
+                </if>
+                <if test="amountEd!=null">
+                    `amount` &lt;= #{amountEd} and
+                </if>
+                <if test="totalAmountList != null">
+                    `totalAmount` in
+                    <foreach collection="totalAmountList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="totalAmountSt !=null">
+                    `totalAmount` >= #{totalAmountSt} and
+                </if>
+                <if test="totalAmountEd!=null">
+                    `totalAmount` &lt;= #{totalAmountEd} and
+                </if>
+                <if test="priceList != null">
+                    `price` in
+                    <foreach collection="priceList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="priceSt !=null">
+                    `price` >= #{priceSt} and
+                </if>
+                <if test="priceEd!=null">
+                    `price` &lt;= #{priceEd} and
+                </if>
+                <if test="totalPriceList != null">
+                    `totalPrice` in
+                    <foreach collection="totalPriceList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="totalPriceSt !=null">
+                    `totalPrice` >= #{totalPriceSt} and
+                </if>
+                <if test="totalPriceEd!=null">
+                    `totalPrice` &lt;= #{totalPriceEd} and
+                </if>
+                <if test="payTypeList != null">
+                    `payType` in
+                    <foreach collection="payTypeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="payTypeSt !=null">
+                    `payType` >= #{payTypeSt} and
+                </if>
+                <if test="payTypeEd!=null">
+                    `payType` &lt;= #{payTypeEd} and
+                </if>
+                <if test="orderNumberList != null">
+                    `orderNumber` in
+                    <foreach collection="orderNumberList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test ="fuzzyOrderNumber!=null and fuzzyOrderNumber.size()>0">
+                    (
+                    <foreach collection="fuzzyOrderNumber"  separator="or" item="item">
+                        `OrderNumber` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyOrderNumber!=null and rightFuzzyOrderNumber.size()>0">
+                    (
+                    <foreach collection="rightFuzzyOrderNumber"  separator="or" item="item">
+                        `OrderNumber` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="serialNumberList != null">
+                    `serialNumber` in
+                    <foreach collection="serialNumberList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test ="fuzzySerialNumber!=null and fuzzySerialNumber.size()>0">
+                    (
+                    <foreach collection="fuzzySerialNumber"  separator="or" item="item">
+                        `SerialNumber` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzySerialNumber!=null and rightFuzzySerialNumber.size()>0">
+                    (
+                    <foreach collection="rightFuzzySerialNumber"  separator="or" item="item">
+                        `SerialNumber` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="orderDateList != null">
+                    `orderDate` in
+                    <foreach collection="orderDateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="orderDateSt !=null">
+                    `orderDate` >= #{orderDateSt} and
+                </if>
+                <if test="orderDateEd!=null">
+                    `orderDate` &lt;= #{orderDateEd} and
+                </if>
+                <if test="originOrderNumberList != null">
+                    `originOrderNumber` in
+                    <foreach collection="originOrderNumberList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test ="fuzzyOriginOrderNumber!=null and fuzzyOriginOrderNumber.size()>0">
+                    (
+                    <foreach collection="fuzzyOriginOrderNumber"  separator="or" item="item">
+                        `OriginOrderNumber` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyOriginOrderNumber!=null and rightFuzzyOriginOrderNumber.size()>0">
+                    (
+                    <foreach collection="rightFuzzyOriginOrderNumber"  separator="or" item="item">
+                        `OriginOrderNumber` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="stateList != null">
+                    `state` in
+                    <foreach collection="stateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="stateSt !=null">
+                    `state` >= #{stateSt} and
+                </if>
+                <if test="stateEd!=null">
+                    `state` &lt;= #{stateEd} and
+                </if>
+                <if test="orderTypeList != null">
+                    `orderType` in
+                    <foreach collection="orderTypeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="orderTypeSt !=null">
+                    `orderType` >= #{orderTypeSt} and
+                </if>
+                <if test="orderTypeEd!=null">
+                    `orderType` &lt;= #{orderTypeEd} and
+                </if>
+                <if test="typeList != null">
+                    `type` in
+                    <foreach collection="typeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="typeSt !=null">
+                    `type` >= #{typeSt} and
+                </if>
+                <if test="typeEd!=null">
+                    `type` &lt;= #{typeEd} and
+                </if>
+                <if test="sourceList != null">
+                    `source` in
+                    <foreach collection="sourceList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="sourceSt !=null">
+                    `source` >= #{sourceSt} and
+                </if>
+                <if test="sourceEd!=null">
+                    `source` &lt;= #{sourceEd} and
+                </if>
+                <if test="isPayPasswordList != null">
+                    `isPayPassword` in
+                    <foreach collection="isPayPasswordList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="isPayPasswordSt !=null">
+                    `isPayPassword` >= #{isPayPasswordSt} and
+                </if>
+                <if test="isPayPasswordEd!=null">
+                    `isPayPassword` &lt;= #{isPayPasswordEd} and
+                </if>
+                <if test="orderDetailList != null">
+                    `orderDetail` in
+                    <foreach collection="orderDetailList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test ="fuzzyOrderDetail!=null and fuzzyOrderDetail.size()>0">
+                    (
+                    <foreach collection="fuzzyOrderDetail"  separator="or" item="item">
+                        `OrderDetail` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyOrderDetail!=null and rightFuzzyOrderDetail.size()>0">
+                    (
+                    <foreach collection="rightFuzzyOrderDetail"  separator="or" item="item">
+                        `OrderDetail` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="isRebateList != null">
+                    `isRebate` in
+                    <foreach collection="isRebateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="isRebateSt !=null">
+                    `isRebate` >= #{isRebateSt} and
+                </if>
+                <if test="isRebateEd!=null">
+                    `isRebate` &lt;= #{isRebateEd} and
+                </if>
+                <if test="BusinessRebateList != null">
+                    `BusinessRebate` in
+                    <foreach collection="BusinessRebateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="BusinessRebateSt !=null">
+                    `BusinessRebate` >= #{BusinessRebateSt} and
+                </if>
+                <if test="BusinessRebateEd!=null">
+                    `BusinessRebate` &lt;= #{BusinessRebateEd} and
+                </if>
+                <if test="UserRebateList != null">
+                    `UserRebate` in
+                    <foreach collection="UserRebateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="UserRebateSt !=null">
+                    `UserRebate` >= #{UserRebateSt} and
+                </if>
+                <if test="UserRebateEd!=null">
+                    `UserRebate` &lt;= #{UserRebateEd} and
+                </if>
+                <if test="createDateTimeList != null">
+                    `createDateTime` in
+                    <foreach collection="createDateTimeList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="createDateTimeSt !=null">
+                    `createDateTime` >= #{createDateTimeSt} and
+                </if>
+                <if test="createDateTimeEd!=null">
+                    `createDateTime` &lt;= #{createDateTimeEd} and
+                </if>
+                <if test="checkStateList != null">
+                    `check_state` in
+                    <foreach collection="checkStateList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test="checkStateSt !=null">
+                    `check_state` >= #{checkStateSt} and
+                </if>
+                <if test="checkStateEd!=null">
+                    `check_state` &lt;= #{checkStateEd} and
+                </if>
+                <if test="cashNumberList != null">
+                    `cash_number` in
+                    <foreach collection="cashNumberList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test ="fuzzyCashNumber!=null and fuzzyCashNumber.size()>0">
+                    (
+                    <foreach collection="fuzzyCashNumber"  separator="or" item="item">
+                        `Cash_number` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyCashNumber!=null and rightFuzzyCashNumber.size()>0">
+                    (
+                    <foreach collection="rightFuzzyCashNumber"  separator="or" item="item">
+                        `Cash_number` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test="bigOrderNumberList != null">
+                    `big_order_number` in
+                    <foreach collection="bigOrderNumberList" close=")" open="(" separator="," item="item">
+                        #{item}
+                    </foreach> and
+                </if>
+                <if test ="fuzzyBigOrderNumber!=null and fuzzyBigOrderNumber.size()>0">
+                    (
+                    <foreach collection="fuzzyBigOrderNumber"  separator="or" item="item">
+                        `Big_order_number` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyBigOrderNumber!=null and rightFuzzyBigOrderNumber.size()>0">
+                    (
+                    <foreach collection="rightFuzzyBigOrderNumber"  separator="or" item="item">
+                        `Big_order_number` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+            </if>
+        </trim>
+    </select>
+
+    <select id="queryOrderLimit1" resultMap="OrderMap">
+        select
+        <include refid="baseResult"></include>
+        from  `_order`
+        <trim prefix="where" suffixOverrides="and | or">
+            <if test="id != null">
+                `id` = #{id} and
+            </if>
+            <if test="userid != null">
+                `userid` = #{userid} and
+            </if>
+            <if test="orderUserId != null">
+                `orderUserId` = #{orderUserId} and
+            </if>
+            <if test="bussinessId != null and bussinessId!=''">
+                `bussinessId` = #{bussinessId} and
+            </if>
+            <if test="storesId != null and storesId!=''">
+                `storesId` = #{storesId} and
+            </if>
+            <if test="payPassword != null and payPassword!=''">
+                `payPassword` = #{payPassword} and
+            </if>
+            <if test="verificationCode != null and verificationCode!=''">
+                `verificationCode` = #{verificationCode} and
+            </if>
+            <if test="amount != null">
+                `amount` = #{amount} and
+            </if>
+            <if test="totalAmount != null">
+                `totalAmount` = #{totalAmount} and
+            </if>
+            <if test="price != null">
+                `price` = #{price} and
+            </if>
+            <if test="totalPrice != null">
+                `totalPrice` = #{totalPrice} and
+            </if>
+            <if test="payType != null">
+                `payType` = #{payType} and
+            </if>
+            <if test="orderNumber != null and orderNumber!=''">
+                `orderNumber` = #{orderNumber} and
+            </if>
+            <if test="serialNumber != null and serialNumber!=''">
+                `serialNumber` = #{serialNumber} and
+            </if>
+            <if test="orderDate != null">
+                `orderDate` = #{orderDate} and
+            </if>
+            <if test="originOrderNumber != null and originOrderNumber!=''">
+                `originOrderNumber` = #{originOrderNumber} and
+            </if>
+            <if test="state != null">
+                `state` = #{state} and
+            </if>
+            <if test="orderType != null">
+                `orderType` = #{orderType} and
+            </if>
+            <if test="type != null">
+                `type` = #{type} and
+            </if>
+            <if test="source != null">
+                `source` = #{source} and
+            </if>
+            <if test="isPayPassword != null">
+                `isPayPassword` = #{isPayPassword} and
+            </if>
+            <if test="orderDetail != null and orderDetail!=''">
+                `orderDetail` = #{orderDetail} and
+            </if>
+            <if test="isRebate != null">
+                `isRebate` = #{isRebate} and
+            </if>
+            <if test="BusinessRebate != null">
+                `BusinessRebate` = #{BusinessRebate} and
+            </if>
+            <if test="UserRebate != null">
+                `UserRebate` = #{UserRebate} and
+            </if>
+            <if test="createDateTime != null">
+                `createDateTime` = #{createDateTime} and
+            </if>
+            <if test="checkState != null">
+                `check_state` = #{checkState} and
+            </if>
+            <if test="cashNumber != null and cashNumber!=''">
+                `cash_number` = #{cashNumber} and
+            </if>
+            <if test="bigOrderNumber != null and bigOrderNumber!=''">
+                `big_order_number` = #{bigOrderNumber} and
+            </if>
+            <if test = "(_parameter instanceof com.hy.model.Order$QueryBuilder) == true">
+                    <if test="idList != null">
+                        `id` in
+                        <foreach collection="idList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="idSt !=null">
+                    `id` >= #{idSt} and
+                </if>
+                <if test="idEd!=null">
+                    `id` &lt;= #{idEd} and
+                </if>
+                    <if test="useridList != null">
+                        `userid` in
+                        <foreach collection="useridList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="useridSt !=null">
+                    `userid` >= #{useridSt} and
+                </if>
+                <if test="useridEd!=null">
+                    `userid` &lt;= #{useridEd} and
+                </if>
+                    <if test="orderUserIdList != null">
+                        `orderUserId` in
+                        <foreach collection="orderUserIdList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="orderUserIdSt !=null">
+                    `orderUserId` >= #{orderUserIdSt} and
+                </if>
+                <if test="orderUserIdEd!=null">
+                    `orderUserId` &lt;= #{orderUserIdEd} and
+                </if>
+                    <if test="bussinessIdList != null">
+                        `bussinessId` in
+                        <foreach collection="bussinessIdList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test ="fuzzyBussinessId!=null and fuzzyBussinessId.size()>0">
+                    (
+                    <foreach collection="fuzzyBussinessId"  separator="or" item="item">
+                        `BussinessId` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyBussinessId!=null and rightFuzzyBussinessId.size()>0">
+                    (
+                    <foreach collection="rightFuzzyBussinessId"  separator="or" item="item">
+                        `BussinessId` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                    <if test="storesIdList != null">
+                        `storesId` in
+                        <foreach collection="storesIdList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test ="fuzzyStoresId!=null and fuzzyStoresId.size()>0">
+                    (
+                    <foreach collection="fuzzyStoresId"  separator="or" item="item">
+                        `StoresId` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyStoresId!=null and rightFuzzyStoresId.size()>0">
+                    (
+                    <foreach collection="rightFuzzyStoresId"  separator="or" item="item">
+                        `StoresId` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                    <if test="payPasswordList != null">
+                        `payPassword` in
+                        <foreach collection="payPasswordList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test ="fuzzyPayPassword!=null and fuzzyPayPassword.size()>0">
+                    (
+                    <foreach collection="fuzzyPayPassword"  separator="or" item="item">
+                        `PayPassword` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyPayPassword!=null and rightFuzzyPayPassword.size()>0">
+                    (
+                    <foreach collection="rightFuzzyPayPassword"  separator="or" item="item">
+                        `PayPassword` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                    <if test="verificationCodeList != null">
+                        `verificationCode` in
+                        <foreach collection="verificationCodeList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test ="fuzzyVerificationCode!=null and fuzzyVerificationCode.size()>0">
+                    (
+                    <foreach collection="fuzzyVerificationCode"  separator="or" item="item">
+                        `VerificationCode` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyVerificationCode!=null and rightFuzzyVerificationCode.size()>0">
+                    (
+                    <foreach collection="rightFuzzyVerificationCode"  separator="or" item="item">
+                        `VerificationCode` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                    <if test="amountList != null">
+                        `amount` in
+                        <foreach collection="amountList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="amountSt !=null">
+                    `amount` >= #{amountSt} and
+                </if>
+                <if test="amountEd!=null">
+                    `amount` &lt;= #{amountEd} and
+                </if>
+                    <if test="totalAmountList != null">
+                        `totalAmount` in
+                        <foreach collection="totalAmountList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="totalAmountSt !=null">
+                    `totalAmount` >= #{totalAmountSt} and
+                </if>
+                <if test="totalAmountEd!=null">
+                    `totalAmount` &lt;= #{totalAmountEd} and
+                </if>
+                    <if test="priceList != null">
+                        `price` in
+                        <foreach collection="priceList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="priceSt !=null">
+                    `price` >= #{priceSt} and
+                </if>
+                <if test="priceEd!=null">
+                    `price` &lt;= #{priceEd} and
+                </if>
+                    <if test="totalPriceList != null">
+                        `totalPrice` in
+                        <foreach collection="totalPriceList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="totalPriceSt !=null">
+                    `totalPrice` >= #{totalPriceSt} and
+                </if>
+                <if test="totalPriceEd!=null">
+                    `totalPrice` &lt;= #{totalPriceEd} and
+                </if>
+                    <if test="payTypeList != null">
+                        `payType` in
+                        <foreach collection="payTypeList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="payTypeSt !=null">
+                    `payType` >= #{payTypeSt} and
+                </if>
+                <if test="payTypeEd!=null">
+                    `payType` &lt;= #{payTypeEd} and
+                </if>
+                    <if test="orderNumberList != null">
+                        `orderNumber` in
+                        <foreach collection="orderNumberList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test ="fuzzyOrderNumber!=null and fuzzyOrderNumber.size()>0">
+                    (
+                    <foreach collection="fuzzyOrderNumber"  separator="or" item="item">
+                        `OrderNumber` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyOrderNumber!=null and rightFuzzyOrderNumber.size()>0">
+                    (
+                    <foreach collection="rightFuzzyOrderNumber"  separator="or" item="item">
+                        `OrderNumber` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                    <if test="serialNumberList != null">
+                        `serialNumber` in
+                        <foreach collection="serialNumberList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test ="fuzzySerialNumber!=null and fuzzySerialNumber.size()>0">
+                    (
+                    <foreach collection="fuzzySerialNumber"  separator="or" item="item">
+                        `SerialNumber` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzySerialNumber!=null and rightFuzzySerialNumber.size()>0">
+                    (
+                    <foreach collection="rightFuzzySerialNumber"  separator="or" item="item">
+                        `SerialNumber` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                    <if test="orderDateList != null">
+                        `orderDate` in
+                        <foreach collection="orderDateList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="orderDateSt !=null">
+                    `orderDate` >= #{orderDateSt} and
+                </if>
+                <if test="orderDateEd!=null">
+                    `orderDate` &lt;= #{orderDateEd} and
+                </if>
+                    <if test="originOrderNumberList != null">
+                        `originOrderNumber` in
+                        <foreach collection="originOrderNumberList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test ="fuzzyOriginOrderNumber!=null and fuzzyOriginOrderNumber.size()>0">
+                    (
+                    <foreach collection="fuzzyOriginOrderNumber"  separator="or" item="item">
+                        `OriginOrderNumber` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyOriginOrderNumber!=null and rightFuzzyOriginOrderNumber.size()>0">
+                    (
+                    <foreach collection="rightFuzzyOriginOrderNumber"  separator="or" item="item">
+                        `OriginOrderNumber` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                    <if test="stateList != null">
+                        `state` in
+                        <foreach collection="stateList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="stateSt !=null">
+                    `state` >= #{stateSt} and
+                </if>
+                <if test="stateEd!=null">
+                    `state` &lt;= #{stateEd} and
+                </if>
+                    <if test="orderTypeList != null">
+                        `orderType` in
+                        <foreach collection="orderTypeList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="orderTypeSt !=null">
+                    `orderType` >= #{orderTypeSt} and
+                </if>
+                <if test="orderTypeEd!=null">
+                    `orderType` &lt;= #{orderTypeEd} and
+                </if>
+                    <if test="typeList != null">
+                        `type` in
+                        <foreach collection="typeList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="typeSt !=null">
+                    `type` >= #{typeSt} and
+                </if>
+                <if test="typeEd!=null">
+                    `type` &lt;= #{typeEd} and
+                </if>
+                    <if test="sourceList != null">
+                        `source` in
+                        <foreach collection="sourceList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="sourceSt !=null">
+                    `source` >= #{sourceSt} and
+                </if>
+                <if test="sourceEd!=null">
+                    `source` &lt;= #{sourceEd} and
+                </if>
+                    <if test="isPayPasswordList != null">
+                        `isPayPassword` in
+                        <foreach collection="isPayPasswordList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="isPayPasswordSt !=null">
+                    `isPayPassword` >= #{isPayPasswordSt} and
+                </if>
+                <if test="isPayPasswordEd!=null">
+                    `isPayPassword` &lt;= #{isPayPasswordEd} and
+                </if>
+                    <if test="orderDetailList != null">
+                        `orderDetail` in
+                        <foreach collection="orderDetailList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test ="fuzzyOrderDetail!=null and fuzzyOrderDetail.size()>0">
+                    (
+                    <foreach collection="fuzzyOrderDetail"  separator="or" item="item">
+                        `OrderDetail` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyOrderDetail!=null and rightFuzzyOrderDetail.size()>0">
+                    (
+                    <foreach collection="rightFuzzyOrderDetail"  separator="or" item="item">
+                        `OrderDetail` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                    <if test="isRebateList != null">
+                        `isRebate` in
+                        <foreach collection="isRebateList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="isRebateSt !=null">
+                    `isRebate` >= #{isRebateSt} and
+                </if>
+                <if test="isRebateEd!=null">
+                    `isRebate` &lt;= #{isRebateEd} and
+                </if>
+                    <if test="BusinessRebateList != null">
+                        `BusinessRebate` in
+                        <foreach collection="BusinessRebateList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="BusinessRebateSt !=null">
+                    `BusinessRebate` >= #{BusinessRebateSt} and
+                </if>
+                <if test="BusinessRebateEd!=null">
+                    `BusinessRebate` &lt;= #{BusinessRebateEd} and
+                </if>
+                    <if test="UserRebateList != null">
+                        `UserRebate` in
+                        <foreach collection="UserRebateList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="UserRebateSt !=null">
+                    `UserRebate` >= #{UserRebateSt} and
+                </if>
+                <if test="UserRebateEd!=null">
+                    `UserRebate` &lt;= #{UserRebateEd} and
+                </if>
+                    <if test="createDateTimeList != null">
+                        `createDateTime` in
+                        <foreach collection="createDateTimeList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="createDateTimeSt !=null">
+                    `createDateTime` >= #{createDateTimeSt} and
+                </if>
+                <if test="createDateTimeEd!=null">
+                    `createDateTime` &lt;= #{createDateTimeEd} and
+                </if>
+                    <if test="checkStateList != null">
+                        `check_state` in
+                        <foreach collection="checkStateList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test="checkStateSt !=null">
+                    `check_state` >= #{checkStateSt} and
+                </if>
+                <if test="checkStateEd!=null">
+                    `check_state` &lt;= #{checkStateEd} and
+                </if>
+                    <if test="cashNumberList != null">
+                        `cash_number` in
+                        <foreach collection="cashNumberList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test ="fuzzyCashNumber!=null and fuzzyCashNumber.size()>0">
+                    (
+                    <foreach collection="fuzzyCashNumber"  separator="or" item="item">
+                        `Cash_number` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyCashNumber!=null and rightFuzzyCashNumber.size()>0">
+                    (
+                    <foreach collection="rightFuzzyCashNumber"  separator="or" item="item">
+                        `Cash_number` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                    <if test="bigOrderNumberList != null">
+                        `big_order_number` in
+                        <foreach collection="bigOrderNumberList" close=")" open="(" separator="," item="item">
+                            #{item}
+                        </foreach> and
+                    </if>
+                <if test ="fuzzyBigOrderNumber!=null and fuzzyBigOrderNumber.size()>0">
+                    (
+                    <foreach collection="fuzzyBigOrderNumber"  separator="or" item="item">
+                        `Big_order_number` like concat('%',#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+                <if test ="rightFuzzyBigOrderNumber!=null and rightFuzzyBigOrderNumber.size()>0">
+                    (
+                    <foreach collection="rightFuzzyBigOrderNumber"  separator="or" item="item">
+                        `Big_order_number` like concat(#{item},'%')
+                    </foreach>
+                    ) and
+                </if>
+            </if>
+        </trim>
+        limit 1
+    </select>
+
+    <sql id="allResult">
+        <trim suffixOverrides=",">
+        `id`,
+        `userid`,
+        `orderUserId`,
+        `bussinessId`,
+        `storesId`,
+        `payPassword`,
+        `verificationCode`,
+        `amount`,
+        `totalAmount`,
+        `price`,
+        `totalPrice`,
+        `payType`,
+        `orderNumber`,
+        `serialNumber`,
+        `orderDate`,
+        `originOrderNumber`,
+        `state`,
+        `orderType`,
+        `type`,
+        `source`,
+        `isPayPassword`,
+        `orderDetail`,
+        `isRebate`,
+        `BusinessRebate`,
+        `UserRebate`,
+        `createDateTime`,
+        `check_state`+0 as `check_state`,
+        `cash_number`,
+        `big_order_number`,
+        </trim>
+    </sql>
+
+
+
+    <sql id="baseResult">
+        <trim suffixOverrides=",">
+            <if test = "(_parameter instanceof com.hy.model.Order$QueryBuilder) == true">
+
+                <if test="fetchFields==null">
+                    <include refid="allResult"></include>
+                </if>
+                <if test="fetchFields!=null">
+                    <if test="fetchFields.AllFields !=null">
+                        <include refid="allResult"></include>
+                    </if>
+                    <if test="fetchFields.AllFields ==null and fetchFields.fetchFields==null and fetchFields.excludeFields==null and fetchFields.otherFields==null">
+                        <include refid="allResult"></include>
+                    </if>
+                    <if test="fetchFields.AllFields==null and fetchFields.fetchFields!=null">
+                    <if test="fetchFields.fetchFields.id==true">
+                        `id`,
+                    </if>
+                    <if test="fetchFields.fetchFields.userid==true">
+                        `userid`,
+                    </if>
+                    <if test="fetchFields.fetchFields.orderUserId==true">
+                        `orderUserId`,
+                    </if>
+                    <if test="fetchFields.fetchFields.bussinessId==true">
+                        `bussinessId`,
+                    </if>
+                    <if test="fetchFields.fetchFields.storesId==true">
+                        `storesId`,
+                    </if>
+                    <if test="fetchFields.fetchFields.payPassword==true">
+                        `payPassword`,
+                    </if>
+                    <if test="fetchFields.fetchFields.verificationCode==true">
+                        `verificationCode`,
+                    </if>
+                    <if test="fetchFields.fetchFields.amount==true">
+                        `amount`,
+                    </if>
+                    <if test="fetchFields.fetchFields.totalAmount==true">
+                        `totalAmount`,
+                    </if>
+                    <if test="fetchFields.fetchFields.price==true">
+                        `price`,
+                    </if>
+                    <if test="fetchFields.fetchFields.totalPrice==true">
+                        `totalPrice`,
+                    </if>
+                    <if test="fetchFields.fetchFields.payType==true">
+                        `payType`,
+                    </if>
+                    <if test="fetchFields.fetchFields.orderNumber==true">
+                        `orderNumber`,
+                    </if>
+                    <if test="fetchFields.fetchFields.serialNumber==true">
+                        `serialNumber`,
+                    </if>
+                    <if test="fetchFields.fetchFields.orderDate==true">
+                        `orderDate`,
+                    </if>
+                    <if test="fetchFields.fetchFields.originOrderNumber==true">
+                        `originOrderNumber`,
+                    </if>
+                    <if test="fetchFields.fetchFields.state==true">
+                        `state`,
+                    </if>
+                    <if test="fetchFields.fetchFields.orderType==true">
+                        `orderType`,
+                    </if>
+                    <if test="fetchFields.fetchFields.type==true">
+                        `type`,
+                    </if>
+                    <if test="fetchFields.fetchFields.source==true">
+                        `source`,
+                    </if>
+                    <if test="fetchFields.fetchFields.isPayPassword==true">
+                        `isPayPassword`,
+                    </if>
+                    <if test="fetchFields.fetchFields.orderDetail==true">
+                        `orderDetail`,
+                    </if>
+                    <if test="fetchFields.fetchFields.isRebate==true">
+                        `isRebate`,
+                    </if>
+                    <if test="fetchFields.fetchFields.BusinessRebate==true">
+                        `BusinessRebate`,
+                    </if>
+                    <if test="fetchFields.fetchFields.UserRebate==true">
+                        `UserRebate`,
+                    </if>
+                    <if test="fetchFields.fetchFields.createDateTime==true">
+                        `createDateTime`,
+                    </if>
+                    <if test="fetchFields.fetchFields.checkState==true">
+                        `check_state`+0 as `check_state`,
+                    </if>
+                    <if test="fetchFields.fetchFields.cashNumber==true">
+                        `cash_number`,
+                    </if>
+                    <if test="fetchFields.fetchFields.bigOrderNumber==true">
+                        `big_order_number`,
+                    </if>
+                    </if>
+                    <if test="fetchFields.AllFields==null and fetchFields.excludeFields!=null">
+                    <if test="fetchFields.excludeFields.id==null">
+                        `id`,
+                    </if>
+                    <if test="fetchFields.excludeFields.userid==null">
+                        `userid`,
+                    </if>
+                    <if test="fetchFields.excludeFields.orderUserId==null">
+                        `orderUserId`,
+                    </if>
+                    <if test="fetchFields.excludeFields.bussinessId==null">
+                        `bussinessId`,
+                    </if>
+                    <if test="fetchFields.excludeFields.storesId==null">
+                        `storesId`,
+                    </if>
+                    <if test="fetchFields.excludeFields.payPassword==null">
+                        `payPassword`,
+                    </if>
+                    <if test="fetchFields.excludeFields.verificationCode==null">
+                        `verificationCode`,
+                    </if>
+                    <if test="fetchFields.excludeFields.amount==null">
+                        `amount`,
+                    </if>
+                    <if test="fetchFields.excludeFields.totalAmount==null">
+                        `totalAmount`,
+                    </if>
+                    <if test="fetchFields.excludeFields.price==null">
+                        `price`,
+                    </if>
+                    <if test="fetchFields.excludeFields.totalPrice==null">
+                        `totalPrice`,
+                    </if>
+                    <if test="fetchFields.excludeFields.payType==null">
+                        `payType`,
+                    </if>
+                    <if test="fetchFields.excludeFields.orderNumber==null">
+                        `orderNumber`,
+                    </if>
+                    <if test="fetchFields.excludeFields.serialNumber==null">
+                        `serialNumber`,
+                    </if>
+                    <if test="fetchFields.excludeFields.orderDate==null">
+                        `orderDate`,
+                    </if>
+                    <if test="fetchFields.excludeFields.originOrderNumber==null">
+                        `originOrderNumber`,
+                    </if>
+                    <if test="fetchFields.excludeFields.state==null">
+                        `state`,
+                    </if>
+                    <if test="fetchFields.excludeFields.orderType==null">
+                        `orderType`,
+                    </if>
+                    <if test="fetchFields.excludeFields.type==null">
+                        `type`,
+                    </if>
+                    <if test="fetchFields.excludeFields.source==null">
+                        `source`,
+                    </if>
+                    <if test="fetchFields.excludeFields.isPayPassword==null">
+                        `isPayPassword`,
+                    </if>
+                    <if test="fetchFields.excludeFields.orderDetail==null">
+                        `orderDetail`,
+                    </if>
+                    <if test="fetchFields.excludeFields.isRebate==null">
+                        `isRebate`,
+                    </if>
+                    <if test="fetchFields.excludeFields.BusinessRebate==null">
+                        `BusinessRebate`,
+                    </if>
+                    <if test="fetchFields.excludeFields.UserRebate==null">
+                        `UserRebate`,
+                    </if>
+                    <if test="fetchFields.excludeFields.createDateTime==null">
+                        `createDateTime`,
+                    </if>
+                    <if test="fetchFields.excludeFields.checkState==null">
+                        `check_state`+0 as `check_state`,
+                    </if>
+                    <if test="fetchFields.excludeFields.cashNumber==null">
+                        `cash_number`,
+                    </if>
+                    <if test="fetchFields.excludeFields.bigOrderNumber==null">
+                        `big_order_number`,
+                    </if>
+                    </if>
+                    <if test="fetchFields.otherFields!=null and fetchFields.otherFields.size>0">
+                        <foreach collection="fetchFields.otherFields" index="index" item="item" separator=",">
+                        `#{item}`
+                        </foreach>
+                    </if>
+                </if>
+            </if>
+            <if test="(_parameter instanceof com.hy.model.Order$QueryBuilder) == false" >
+                <include refid="allResult"></include>
+            </if>
+
+        </trim>
+    </sql>
+
+
+</mapper>

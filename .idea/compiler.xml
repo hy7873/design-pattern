@@ -6,16 +6,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="design-pattern-web" />
         <module name="design-pattern-interface" />
         <module name="design-pattern-service" />
-        <module name="design-pattern-web" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8">
+    <bytecodeTargetLevel>
       <module name="design-pattern" target="1.8" />
       <module name="design-pattern-interface" target="1.8" />
       <module name="design-pattern-service" target="1.8" />
       <module name="design-pattern-web" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="design-pattern-interface" options="-parameters" />
+      <module name="design-pattern-service" options="-parameters" />
+      <module name="design-pattern-web" options="-parameters" />
+    </option>
   </component>
 </project>
