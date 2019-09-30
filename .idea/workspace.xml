@@ -2,33 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4832c5d-f29f-4dca-a243-237e120d1547" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design-pattern-web/src/test/java/com/hy/Testmain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/design-pattern-interface/design-pattern-interface.iml" beforeDir="false" afterPath="$PROJECT_DIR$/design-pattern-interface/design-pattern-interface.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/design-pattern-service/design-pattern-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/design-pattern-service/design-pattern-service.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/design-pattern-web/design-pattern-web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/design-pattern-web/design-pattern-web.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/design-pattern-web/src/test/java/com/hy/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/design-pattern-web/src/test/java/com/hy/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/design-pattern-web/target/classes/com/hy/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/design-pattern-web/target/classes/com/hy/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/design-pattern-web/target/classes/com/hy/interceptor/LocalSpringMVCConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/design-pattern-web/target/classes/com/hy/interceptor/LocalSpringMVCConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/design-pattern-web/target/classes/com/hy/util/CORSFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/design-pattern-web/target/classes/com/hy/util/CORSFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/design-pattern-web/target/classes/com/hy/util/MnIpUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/design-pattern-web/target/classes/com/hy/util/MnIpUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/design-pattern-web/target/test-classes/com/hy/AppTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/design-pattern-web/target/test-classes/com/hy/AppTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/design-pattern-web/target/test-classes/com/hy/Son.class" beforeDir="false" afterPath="$PROJECT_DIR$/design-pattern-web/target/test-classes/com/hy/Son.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/design-pattern.iml" beforeDir="false" afterPath="$PROJECT_DIR$/design-pattern.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,7 +55,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AppTest.test3">
+  <component name="RunManager" selected="JUnit.Testmain.test1">
     <configuration name="AppTest.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="design-pattern-web" />
       <extension name="coverage">
@@ -84,6 +72,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Testmain.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="design-pattern-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hy" />
+      <option name="MAIN_CLASS_NAME" value="com.hy.Testmain" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="App" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="design-pattern-web" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.hy.App" />
@@ -93,6 +97,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Testmain.test1" />
         <item itemvalue="JUnit.AppTest.test3" />
       </list>
     </recent_temporary>
@@ -107,7 +112,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1569831654947</updated>
-      <workItem from="1569831657612" duration="3027000" />
+      <workItem from="1569831657612" duration="3743000" />
     </task>
     <servers />
   </component>
