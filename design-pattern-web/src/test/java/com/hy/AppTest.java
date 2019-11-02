@@ -3,12 +3,8 @@ package com.hy;
 import com.hy.dao.AdGroupDirIntegralMapper;
 import com.hy.dao.OrderMapper;
 import com.hy.dao.UserMapper;
-import com.hy.dao.base.OrderBaseMapper;
-import com.hy.design_pattern.strategy.ActivityServiceProcessor;
+import com.hy.designPattern.strategy.ActivityServiceProcessor;
 import com.hy.model.AdGroupDirIntegral;
-import com.hy.model.Order;
-import io.netty.resolver.AddressResolverGroup;
-import net.bytebuddy.asm.Advice;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +13,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
